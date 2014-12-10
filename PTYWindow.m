@@ -158,7 +158,7 @@
         // the method doesn't exist (it's new in 10.7) but we build against 10.5 sdk.
         IMP functionPointer = [NSWindow instanceMethodForSelector:_cmd];
         isTogglingLionFullScreen_ = true;
-        functionPointer(self, _cmd, sender);
+        // functionPointer(self, _cmd, sender);
         isTogglingLionFullScreen_ = false;
     }
 }

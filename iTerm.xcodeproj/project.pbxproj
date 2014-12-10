@@ -385,6 +385,411 @@
 		5ECE00601454E59B004861E9 /* PseudoTerminalRestorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE005E1454E59B004861E9 /* PseudoTerminalRestorer.m */; };
 		5ECE4AE814513F05002A9CC2 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5ECE4AC41451343E002A9CC2 /* Growl.framework */; };
 		5ECE4AEA14514058002A9CC2 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE4AE914514058002A9CC2 /* Growl Registration Ticket.growlRegDict */; };
+		7973786E1A381E400050F042 /* ProfileTableRow.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D06E7D114BC04510097C0ED /* ProfileTableRow.h */; };
+		7973786F1A381E400050F042 /* ProfileModelWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D06E7D514BC04E20097C0ED /* ProfileModelWrapper.h */; };
+		797378701A381E400050F042 /* ProfileTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D06E7D914BC05DB0097C0ED /* ProfileTableView.h */; };
+		797378711A381E400050F042 /* ProfileModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2214BABE8700BD5035 /* ProfileModel.h */; };
+		797378721A381E400050F042 /* BookmarksController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2314BABE8700BD5035 /* BookmarksController.h */; };
+		797378731A381E400050F042 /* charmaps.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2414BABE8700BD5035 /* charmaps.h */; };
+		797378741A381E400050F042 /* iTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2614BABE8700BD5035 /* iTerm.h */; };
+		797378751A381E400050F042 /* iTermController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2714BABE8700BD5035 /* iTermController.h */; };
+		797378761A381E400050F042 /* iTermKeyBindingMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2814BABE8700BD5035 /* iTermKeyBindingMgr.h */; };
+		797378771A381E400050F042 /* NSStringITerm.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2914BABE8700BD5035 /* NSStringITerm.h */; };
+		797378781A381E400050F042 /* PreferencePanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2A14BABE8700BD5035 /* PreferencePanel.h */; };
+		797378791A381E400050F042 /* PseudoTerminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2B14BABE8700BD5035 /* PseudoTerminal.h */; };
+		7973787A1A381E400050F042 /* PTYScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2C14BABE8700BD5035 /* PTYScrollView.h */; };
+		7973787B1A381E400050F042 /* PTYSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2D14BABE8700BD5035 /* PTYSession.h */; };
+		7973787C1A381E400050F042 /* PTYTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2E14BABE8700BD5035 /* PTYTabView.h */; };
+		7973787D1A381E400050F042 /* PTYTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A2F14BABE8700BD5035 /* PTYTask.h */; };
+		7973787E1A381E400050F042 /* PTYTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A3014BABE8700BD5035 /* PTYTextView.h */; };
+		7973787F1A381E400050F042 /* PTYWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A3114BABE8700BD5035 /* PTYWindow.h */; };
+		797378801A381E400050F042 /* VT100Screen.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A3214BABE8700BD5035 /* VT100Screen.h */; };
+		797378811A381E400050F042 /* VT100Terminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D407A3314BABE8700BD5035 /* VT100Terminal.h */; };
+		797378821A381E400050F042 /* IntervalMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7B9A671491D82F003A2A22 /* IntervalMap.h */; };
+		797378831A381E400050F042 /* TmuxGateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3D21851482E0E500FAC8E7 /* TmuxGateway.h */; };
+		797378841A381E400050F042 /* TmuxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3D218E1482F18A00FAC8E7 /* TmuxController.h */; };
+		797378851A381E400050F042 /* TSVParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3D21931483144600FAC8E7 /* TSVParser.h */; };
+		797378861A381E400050F042 /* TmuxLayoutParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3D21AD14839AAB00FAC8E7 /* TmuxLayoutParser.h */; };
+		797378871A381E400050F042 /* TmuxWindowOpener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB67CEB14850D53005849A1 /* TmuxWindowOpener.h */; };
+		797378881A381E400050F042 /* TmuxHistoryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB67CEF1485C578005849A1 /* TmuxHistoryParser.h */; };
+		797378891A381E400050F042 /* HighlightTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3BBD6914759D6C00FAB389 /* HighlightTrigger.h */; };
+		7973788A1A381E400050F042 /* PointerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D8255FE146881EC007CAE78 /* PointerController.h */; };
+		7973788B1A381E400050F042 /* PointerPrefsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D8255FA14687EE8007CAE78 /* PointerPrefsController.h */; };
+		7973788C1A381E400050F042 /* SessionTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DEDC8FB1451F67D004F1615 /* SessionTitleView.h */; };
+		7973788D1A381E400050F042 /* TrouterPrefsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4AE8FC14343A760092EB49 /* TrouterPrefsController.h */; };
+		7973788E1A381E400050F042 /* SmartSelectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D24C2C3142FEACF006B246F /* SmartSelectionController.h */; };
+		7973788F1A381E400050F042 /* SendTextTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D24C282142EF334006B246F /* SendTextTrigger.h */; };
+		797378901A381E400050F042 /* ToolNotes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D67AAA714284BF300D5DA4E /* ToolNotes.h */; };
+		797378911A381E400050F042 /* PseudoTerminalRestorer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ECE005D1454E59B004861E9 /* PseudoTerminalRestorer.h */; };
+		797378921A381E400050F042 /* Autocomplete.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE214DF128212EE004E3ADF /* Autocomplete.h */; };
+		797378931A381E400050F042 /* TriggerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D31BC63142D33CA001F7ECB /* TriggerController.h */; };
+		797378941A381E400050F042 /* CoprocessTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DDD90142E5AC600275650 /* CoprocessTrigger.h */; };
+		797378951A381E400050F042 /* AlertTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DCC14142D7FC10016228A /* AlertTrigger.h */; };
+		797378961A381E400050F042 /* ScriptTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DCC10142D7F970016228A /* ScriptTrigger.h */; };
+		797378971A381E400050F042 /* BellTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DCC0C142D7F5F0016228A /* BellTrigger.h */; };
+		797378981A381E400050F042 /* NSBitmapImageRep+CoreImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DF0895713DBAE1F00A52AD8 /* NSBitmapImageRep+CoreImage.h */; };
+		797378991A381E400050F042 /* NSImage+CoreImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DF0895913DBAE1F00A52AD8 /* NSImage+CoreImage.h */; };
+		7973789A1A381E400050F042 /* BounceTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DCC08142D7F300016228A /* BounceTrigger.h */; };
+		7973789B1A381E400050F042 /* GrowlTrigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DCC02142D7E570016228A /* GrowlTrigger.h */; };
+		7973789C1A381E400050F042 /* Trigger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DCBFC142D7BA60016228A /* Trigger.h */; };
+		7973789D1A381E400050F042 /* Coprocess.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9DDD9A142E5FBB00275650 /* Coprocess.h */; };
+		7973789E1A381E400050F042 /* ToolWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE8DF341415799700F83147 /* ToolWrapper.h */; };
+		7973789F1A381E400050F042 /* FutureMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9F6AB6140C9DC4009B5CD4 /* FutureMethods.h */; };
+		797378A01A381E400050F042 /* ArrangementPreviewView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2560A813EE60E4006B35CD /* ArrangementPreviewView.h */; };
+		797378A11A381E400050F042 /* ToolPasteHistory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE8DDAB1415648600F83147 /* ToolPasteHistory.h */; };
+		797378A21A381E400050F042 /* MovePaneController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D29732514082676004C5DBE /* MovePaneController.h */; };
+		797378A31A381E400050F042 /* FontSizeEstimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA8117C13CEA30A00CCA89A /* FontSizeEstimator.h */; };
+		797378A41A381E400050F042 /* ToolProfiles.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE8DC8B1415546000F83147 /* ToolProfiles.h */; };
+		797378A51A381E400050F042 /* ToolJobs.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D19C71214171F1D00617E08 /* ToolJobs.h */; };
+		797378A61A381E400050F042 /* ToolbeltView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE8DC871415513A00F83147 /* ToolbeltView.h */; };
+		797378A71A381E400050F042 /* WindowArrangements.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DCA5ECD13EE507800B7725E /* WindowArrangements.h */; };
+		797378A81A381E400050F042 /* SplitSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D29732914082A52004C5DBE /* SplitSelectionView.h */; };
+		797378A91A381E400050F042 /* SplitPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DF8AF5613FD781700C8A435 /* SplitPanel.h */; };
+		797378AA1A381E400050F042 /* BookmarkModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DCF3F491225F6F200AD56F1 /* BookmarkModel.h */; };
+		797378AB1A381E400050F042 /* ProfileListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6C50A51226EEFB00E0AA3E /* ProfileListView.h */; };
+		797378AC1A381E400050F042 /* ProfilesWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE5EBE6122B892900C736B0 /* ProfilesWindow.h */; };
+		797378AD1A381E400050F042 /* charmaps.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6B04E42E320073D10E /* charmaps.h */; };
+		797378AE1A381E400050F042 /* DVR.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D93D33312695442007F741B /* DVR.h */; };
+		797378AF1A381E400050F042 /* NSFileManager+DirectoryLocations.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D67ABA914285D6000D5DA4E /* NSFileManager+DirectoryLocations.h */; };
+		797378B01A381E400050F042 /* DVRBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D93D3451269741B007F741B /* DVRBuffer.h */; };
+		797378B11A381E400050F042 /* DVRDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D93D34D126974BC007F741B /* DVRDecoder.h */; };
+		797378B21A381E400050F042 /* DVREncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D93D35112697529007F741B /* DVREncoder.h */; };
+		797378B31A381E400050F042 /* DVRIndexEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D93D3491269746F007F741B /* DVRIndexEntry.h */; };
+		797378B41A381E400050F042 /* FakeWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D173857126C820A004622DC /* FakeWindow.h */; };
+		797378B51A381E400050F042 /* FindCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6804E42E320073D10E /* FindCommandHandler.h */; };
+		797378B61A381E400050F042 /* FindView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D237D26131D8741004DD60C /* FindView.h */; };
+		797378B71A381E400050F042 /* FindViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D237D92131D8D66004DD60C /* FindViewController.h */; };
+		797378B81A381E400050F042 /* GlobalSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAED28612E9395E005E49ED /* GlobalSearch.h */; };
+		797378B91A381E410050F042 /* GTMCarbonEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D624BD81386E0B600111319 /* GTMCarbonEvent.h */; };
+		797378BA1A381E410050F042 /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D624BF31386E39D00111319 /* GTMDebugSelectorValidation.h */; };
+		797378BB1A381E410050F042 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D624BDC1386E0FA00111319 /* GTMDefines.h */; };
+		797378BC1A381E410050F042 /* GTMObjectSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D624BED1386E34F00111319 /* GTMObjectSingleton.h */; };
+		797378BD1A381E410050F042 /* GTMTypeCasting.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D624BF51386E3B400111319 /* GTMTypeCasting.h */; };
+		797378BE1A381E410050F042 /* iTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6A04E42E320073D10E /* iTerm.h */; };
+		797378BF1A381E410050F042 /* iTermApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF0FD63062916F70080EF74 /* iTermApplication.h */; };
+		797378C01A381E410050F042 /* iTermApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D5CC6304E7AA0500000106 /* iTermApplicationDelegate.h */; };
+		797378C11A381E410050F042 /* iTermController.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6204E42E320073D10E /* iTermController.h */; };
+		797378C21A381E410050F042 /* iTermExpose.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DDBC61C12E2BCDC00BC3868 /* iTermExpose.h */; };
+		797378C31A381E410050F042 /* iTermGrowlDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F69E78910AB7AC85001EC0FF /* iTermGrowlDelegate.h */; };
+		797378C41A381E410050F042 /* iTermKeyBindingMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = DDDB7AD605D773B400E197C2 /* iTermKeyBindingMgr.h */; };
+		797378C51A381E410050F042 /* iTermSearchField.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAED99012EDF923005E49ED /* iTermSearchField.h */; };
+		797378C61A381E410050F042 /* ITAddressBookMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = 20E74F4804E9089700000106 /* ITAddressBookMgr.h */; };
+		797378C71A381E410050F042 /* ITViewLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 20B8892A04E9342100000106 /* ITViewLocalizer.h */; };
+		797378C81A381E410050F042 /* LineBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D72438F11F416F300BD4924 /* LineBuffer.h */; };
+		797378C91A381E410050F042 /* NSDateFormatterExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7C1D1012772ECC00461E55 /* NSDateFormatterExtras.h */; };
+		797378CA1A381E410050F042 /* NSStringITerm.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC5304E42E320073D10E /* NSStringITerm.h */; };
+		797378CB1A381E410050F042 /* PasteboardHistory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7C187F1275D22900461E55 /* PasteboardHistory.h */; };
+		797378CC1A381E410050F042 /* Popup.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD7363F1283C2FA009B7829 /* Popup.h */; };
+		797378CD1A381E410050F042 /* PreferencePanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6504E42E320073D10E /* PreferencePanel.h */; };
+		797378CE1A381E410050F042 /* ProcessCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D988595135D23BD0072023F /* ProcessCache.h */; };
+		797378CF1A381E410050F042 /* PseudoTerminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6C04E42E320073D10E /* PseudoTerminal.h */; };
+		797378D01A381E410050F042 /* PTYScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6004E42E320073D10E /* PTYScrollView.h */; };
+		797378D11A381E410050F042 /* PTYSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6604E42E320073D10E /* PTYSession.h */; };
+		797378D21A381E410050F042 /* PTYTab.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E802C129DA45A00F3D71E /* PTYTab.h */; };
+		797378D31A381E410050F042 /* PTYTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC5704E42E320073D10E /* PTYTabView.h */; };
+		797378D41A381E410050F042 /* PTYTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC5804E42E320073D10E /* PTYTask.h */; };
+		797378D51A381E410050F042 /* PTYTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC5404E42E320073D10E /* PTYTextView.h */; };
+		797378D61A381E410050F042 /* PTYWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC5B04E42E320073D10E /* PTYWindow.h */; };
+		797378D71A381E410050F042 /* PTToolbarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2076B15704E8817300000106 /* PTToolbarController.h */; };
+		797378D81A381E410050F042 /* ScreenChar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D36155312CBF33E00803EA9 /* ScreenChar.h */; };
+		797378D91A381E410050F042 /* SessionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E812F12A18F7500F3D71E /* SessionView.h */; };
+		797378DA1A381E410050F042 /* TextViewWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D44218A1290B34500891504 /* TextViewWrapper.h */; };
+		797378DB1A381E410050F042 /* Trouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D06A051134CDBF800C414EF /* Trouter.h */; };
+		797378DC1A381E410050F042 /* VT100Screen.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC5A04E42E320073D10E /* VT100Screen.h */; };
+		797378DD1A381E410050F042 /* VT100Terminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6104E42E320073D10E /* VT100Terminal.h */; };
+		797378DE1A381E4B0050F042 /* SBSystemPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AA395B18275EB800A19BD5 /* SBSystemPreferences.h */; };
+		797378DF1A381E500050F042 /* ProfileListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6C50A61226EEFB00E0AA3E /* ProfileListView.m */; };
+		797378E01A381E500050F042 /* ProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF3E8D122419D200AD56F1 /* ProfileModel.m */; };
+		797378E11A381E500050F042 /* ProfilesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE5EBE7122B892900C736B0 /* ProfilesWindow.m */; };
+		797378E21A381E500050F042 /* ProfileTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D06E7D214BC04510097C0ED /* ProfileTableRow.m */; };
+		797378E31A381E500050F042 /* ProfileModelWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D06E7D614BC04E20097C0ED /* ProfileModelWrapper.m */; };
+		797378E41A381E500050F042 /* ProfileTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D06E7DA14BC05DB0097C0ED /* ProfileTableView.m */; };
+		797378E51A381E530050F042 /* GTMCarbonEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D624BC71386E09E00111319 /* GTMCarbonEvent.m */; };
+		797378E61A381E580050F042 /* EquivalenceClassSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAE714B14AAF24200DA144B /* EquivalenceClassSet.h */; };
+		797378E71A381E580050F042 /* EquivalenceClassSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE714C14AAF24200DA144B /* EquivalenceClassSet.m */; };
+		797378E81A381E580050F042 /* TmuxGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D21861482E0E500FAC8E7 /* TmuxGateway.m */; };
+		797378E91A381E580050F042 /* TmuxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D218F1482F18A00FAC8E7 /* TmuxController.m */; };
+		797378EA1A381E580050F042 /* TSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D21941483144600FAC8E7 /* TSVParser.m */; };
+		797378EB1A381E580050F042 /* TmuxLayoutParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D21AE14839AAB00FAC8E7 /* TmuxLayoutParser.m */; };
+		797378EC1A381E580050F042 /* TmuxWindowOpener.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB67CEC14850D53005849A1 /* TmuxWindowOpener.m */; };
+		797378ED1A381E580050F042 /* TmuxHistoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB67CF01485C578005849A1 /* TmuxHistoryParser.m */; };
+		797378EE1A381E580050F042 /* TmuxStateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB67CF31486BD3D005849A1 /* TmuxStateParser.h */; };
+		797378EF1A381E580050F042 /* TmuxStateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB67CF41486BD3D005849A1 /* TmuxStateParser.m */; };
+		797378F01A381E580050F042 /* TmuxDashboardController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD4CE7E14A51C0D00ED182E /* TmuxDashboardController.h */; };
+		797378F11A381E580050F042 /* TmuxDashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD4CE7F14A51C0D00ED182E /* TmuxDashboardController.m */; };
+		797378F21A381E580050F042 /* TmuxSessionsTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA9AEE814A51CA000BEB37B /* TmuxSessionsTable.h */; };
+		797378F31A381E580050F042 /* TmuxWindowsTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0B613A14A7C76500C57C33 /* TmuxWindowsTable.h */; };
+		797378F41A381E580050F042 /* TmuxWindowsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B613B14A7C76500C57C33 /* TmuxWindowsTable.m */; };
+		797378F51A381E580050F042 /* TmuxControllerRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0B613614A7BC1200C57C33 /* TmuxControllerRegistry.h */; };
+		797378F61A381E580050F042 /* TmuxControllerRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B613714A7BC1200C57C33 /* TmuxControllerRegistry.m */; };
+		797378F71A381E580050F042 /* TmuxSessionsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA9AEE914A51CA000BEB37B /* TmuxSessionsTable.m */; };
+		797378F81A381E5E0050F042 /* ArrangementPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2560A913EE60E4006B35CD /* ArrangementPreviewView.m */; };
+		797378F91A381E5E0050F042 /* PreferencePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB019DE103670C6501F955DB /* PreferencePanel.m */; };
+		797378FA1A381E5E0050F042 /* SmartSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24C2C4142FEACF006B246F /* SmartSelectionController.m */; };
+		797378FB1A381E5E0050F042 /* TriggerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D31BC64142D33CA001F7ECB /* TriggerController.m */; };
+		797378FC1A381E5E0050F042 /* TrouterPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AE8FD14343A760092EB49 /* TrouterPrefsController.m */; };
+		797378FD1A381E5E0050F042 /* WindowArrangements.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA5ECE13EE507800B7725E /* WindowArrangements.m */; };
+		797378FE1A381E5E0050F042 /* PointerPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8255FB14687EE8007CAE78 /* PointerPrefsController.m */; };
+		797378FF1A381E5E0050F042 /* EventMonitorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D825602146B258A007CAE78 /* EventMonitorView.h */; };
+		797379001A381E5E0050F042 /* EventMonitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D825603146B258A007CAE78 /* EventMonitorView.m */; };
+		797379011A381E5E0050F042 /* ContextMenuActionPrefsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D21EE39147711300066E04A /* ContextMenuActionPrefsController.h */; };
+		797379021A381E5E0050F042 /* ContextMenuActionPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21EE3A147711300066E04A /* ContextMenuActionPrefsController.m */; };
+		797379031A381E630050F042 /* NSView+RecursiveDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAF7779183A95E300D2EF0B /* NSView+RecursiveDescription.h */; };
+		797379041A381E630050F042 /* NSView+RecursiveDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF777A183A95E300D2EF0B /* NSView+RecursiveDescription.m */; };
+		797379051A381E630050F042 /* NSView+iTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D48B32116706FC3000046EE /* NSView+iTerm.h */; };
+		797379061A381E630050F042 /* NSView+iTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D48B32216706FC3000046EE /* NSView+iTerm.m */; };
+		797379071A381E630050F042 /* NSBitmapImageRep+CoreImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0895813DBAE1F00A52AD8 /* NSBitmapImageRep+CoreImage.m */; };
+		797379081A381E630050F042 /* NSDateFormatterExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C1D1112772ECC00461E55 /* NSDateFormatterExtras.m */; };
+		797379091A381E630050F042 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D67ABAA14285D6000D5DA4E /* NSFileManager+DirectoryLocations.m */; };
+		7973790A1A381E630050F042 /* NSImage+CoreImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0895A13DBAE1F00A52AD8 /* NSImage+CoreImage.m */; };
+		7973790B1A381E630050F042 /* NSStringITerm.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E901A202743CA303A80106 /* NSStringITerm.m */; };
+		7973790C1A381E630050F042 /* NSBezierPath+iTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D085F9416F04D0900B7FCE9 /* NSBezierPath+iTerm.h */; };
+		7973790D1A381E630050F042 /* NSBezierPath+iTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085F9516F04D0900B7FCE9 /* NSBezierPath+iTerm.m */; };
+		7973790E1A381E690050F042 /* Autocomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE214E0128212EE004E3ADF /* Autocomplete.m */; };
+		7973790F1A381E690050F042 /* PasteboardHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C18801275D22900461E55 /* PasteboardHistory.m */; };
+		797379101A381E690050F042 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD736401283C2FA009B7829 /* Popup.m */; };
+		797379111A381E6D0050F042 /* DVR.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D93D33412695442007F741B /* DVR.m */; };
+		797379121A381E6D0050F042 /* DVRBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D93D3591269778C007F741B /* DVRBuffer.m */; };
+		797379131A381E6D0050F042 /* DVRDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D93D34E126974BC007F741B /* DVRDecoder.m */; };
+		797379141A381E6D0050F042 /* DVREncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D93D35212697529007F741B /* DVREncoder.m */; };
+		797379151A381E6D0050F042 /* DVRIndexEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D93D3B012697D53007F741B /* DVRIndexEntry.m */; };
+		797379161A381E6D0050F042 /* FakeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D173858126C820A004622DC /* FakeWindow.m */; };
+		797379171A381E710050F042 /* ToolbeltView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8DC881415513A00F83147 /* ToolbeltView.m */; };
+		797379181A381E710050F042 /* ToolWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8DF351415799700F83147 /* ToolWrapper.m */; };
+		797379191A381E710050F042 /* ToolJobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D19C71314171F1D00617E08 /* ToolJobs.m */; };
+		7973791A1A381E710050F042 /* ToolNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D67AAA814284BF300D5DA4E /* ToolNotes.m */; };
+		7973791B1A381E710050F042 /* ToolPasteHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8DDAC1415648600F83147 /* ToolPasteHistory.m */; };
+		7973791C1A381E710050F042 /* ToolProfiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8DC8C1415546000F83147 /* ToolProfiles.m */; };
+		7973791D1A381E760050F042 /* HighlightTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3BBD6A14759D6C00FAB389 /* HighlightTrigger.m */; };
+		7973791E1A381E760050F042 /* Trigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DCBFD142D7BA60016228A /* Trigger.m */; };
+		7973791F1A381E760050F042 /* AlertTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DCC15142D7FC10016228A /* AlertTrigger.m */; };
+		797379201A381E760050F042 /* BellTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DCC0D142D7F5F0016228A /* BellTrigger.m */; };
+		797379211A381E760050F042 /* CoprocessTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DDD91142E5AC600275650 /* CoprocessTrigger.m */; };
+		797379221A381E760050F042 /* BounceTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DCC09142D7F300016228A /* BounceTrigger.m */; };
+		797379231A381E760050F042 /* GrowlTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DCC03142D7E570016228A /* GrowlTrigger.m */; };
+		797379241A381E760050F042 /* ScriptTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DCC11142D7F970016228A /* ScriptTrigger.m */; };
+		797379251A381E760050F042 /* SendTextTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D24C283142EF334006B246F /* SendTextTrigger.m */; };
+		797379261A381E7E0050F042 /* BackgroundThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA26ABE15007507004B5792 /* BackgroundThread.h */; };
+		797379271A381E7E0050F042 /* BackgroundThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA26ABF15007507004B5792 /* BackgroundThread.m */; };
+		797379281A381E7E0050F042 /* CharacterRun.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D48B377167E809D000046EE /* CharacterRun.h */; };
+		797379291A381E7E0050F042 /* CharacterRunInline.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D699BC317CABC060094F0C1 /* CharacterRunInline.h */; };
+		7973792A1A381E7E0050F042 /* CharacterRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D48B378167E809D000046EE /* CharacterRun.m */; };
+		7973792B1A381E7E0050F042 /* Coprocess.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9DDD9B142E5FBB00275650 /* Coprocess.m */; };
+		7973792C1A381E7E0050F042 /* FindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D237D27131D8741004DD60C /* FindView.m */; };
+		7973792D1A381E7E0050F042 /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D237D93131D8D66004DD60C /* FindViewController.m */; };
+		7973792E1A381E7E0050F042 /* FontSizeEstimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8117D13CEA30A00CCA89A /* FontSizeEstimator.m */; };
+		7973792F1A381E7E0050F042 /* FutureMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F6AB7140C9DC4009B5CD4 /* FutureMethods.m */; };
+		797379301A381E7E0050F042 /* GlobalSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAED28712E9395E005E49ED /* GlobalSearch.m */; };
+		797379311A381E7E0050F042 /* IntervalMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B9A681491D82F003A2A22 /* IntervalMap.m */; };
+		797379321A381E7E0050F042 /* ITAddressBookMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E74F4904E9089700000106 /* ITAddressBookMgr.m */; };
+		797379331A381E7E0050F042 /* ITViewLocalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B8892B04E9342100000106 /* ITViewLocalizer.m */; };
+		797379341A381E7E0050F042 /* iTermApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0FD64062916F70080EF74 /* iTermApplication.m */; };
+		797379351A381E7E0050F042 /* iTermApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D5CC6404E7AA0500000106 /* iTermApplicationDelegate.m */; };
+		797379361A381E7E0050F042 /* iTermController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A66F030272453F03A80106 /* iTermController.m */; };
+		797379371A381E7E0050F042 /* iTermExpose.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBC61D12E2BCDC00BC3868 /* iTermExpose.m */; };
+		797379381A381E7E0050F042 /* iTermFontPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2F3B3B1516BA460044C337 /* iTermFontPanel.h */; };
+		797379391A381E7E0050F042 /* iTermFontPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F3B3C1516BA460044C337 /* iTermFontPanel.m */; };
+		7973793A1A381E7E0050F042 /* iTermGrowlDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F69E788C0AB7AC6D001EC0FF /* iTermGrowlDelegate.m */; };
+		7973793B1A381E7E0050F042 /* iTermKeyBindingMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDB7ABD05D7736600E197C2 /* iTermKeyBindingMgr.m */; };
+		7973793C1A381E7E0050F042 /* iTermSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAED99112EDF923005E49ED /* iTermSearchField.m */; };
+		7973793D1A381E7E0050F042 /* LineBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D72438C11F416E500BD4924 /* LineBuffer.m */; };
+		7973793E1A381E7E0050F042 /* MovePaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29732614082676004C5DBE /* MovePaneController.m */; };
+		7973793F1A381E7E0050F042 /* PasteContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D085F8416F02E7400B7FCE9 /* PasteContext.h */; };
+		797379401A381E7E0050F042 /* PasteContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085F8516F02E7400B7FCE9 /* PasteContext.m */; };
+		797379411A381E7E0050F042 /* PasteEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D085F9816F1135F00B7FCE9 /* PasteEvent.h */; };
+		797379421A381E7E0050F042 /* PasteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085F9916F1135F00B7FCE9 /* PasteEvent.m */; };
+		797379431A381E7E0050F042 /* PasteView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D085F9016F03E5400B7FCE9 /* PasteView.h */; };
+		797379441A381E7E0050F042 /* PasteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085F9116F03E5400B7FCE9 /* PasteView.m */; };
+		797379451A381E7E0050F042 /* PasteViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D085F8A16F0328B00B7FCE9 /* PasteViewController.h */; };
+		797379461A381E7E0050F042 /* PasteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085F8B16F0328B00B7FCE9 /* PasteViewController.m */; };
+		797379471A381E7E0050F042 /* PointerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8255FF146881EC007CAE78 /* PointerController.m */; };
+		797379481A381E7E0050F042 /* ProcessCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D988596135D23BD0072023F /* ProcessCache.m */; };
+		797379491A381E7E0050F042 /* PseudoTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD0AD0A0337A5B701F955DB /* PseudoTerminal.m */; };
+		7973794A1A381E7E0050F042 /* PseudoTerminalRestorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE005E1454E59B004861E9 /* PseudoTerminalRestorer.m */; };
+		7973794B1A381E7E0050F042 /* PTYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CF755F026DDA6303A80106 /* PTYScrollView.m */; };
+		7973794C1A381E7E0050F042 /* PTYSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F52ED8DD037F0A7D01A8A066 /* PTYSession.m */; };
+		7973794D1A381E7E0050F042 /* PTToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2076B15804E8817300000106 /* PTToolbarController.m */; };
+		7973794E1A381E7E0050F042 /* PTYTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E802D129DA45A00F3D71E /* PTYTab.m */; };
+		7973794F1A381E7E0050F042 /* PTYSplitView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD6707514934ADE008E4361 /* PTYSplitView.h */; };
+		797379501A381E7E0050F042 /* PTYSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6707614934ADE008E4361 /* PTYSplitView.m */; };
+		797379511A381E7E0050F042 /* PTYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CF7560026DDA6303A80106 /* PTYTask.m */; };
+		797379521A381E7E0050F042 /* PTYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CF7561026DDA6303A80106 /* PTYTextView.m */; };
+		797379531A381E7E0050F042 /* PTYTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E533B403B2959201A8A066 /* PTYTabView.m */; };
+		797379541A381E7E0050F042 /* PTYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F56B230B03A1B36701A8A066 /* PTYWindow.m */; };
+		797379551A381E7E0050F042 /* RoundedRectView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D085F9C16F137D900B7FCE9 /* RoundedRectView.h */; };
+		797379561A381E7E0050F042 /* RoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085F9D16F137D900B7FCE9 /* RoundedRectView.m */; };
+		797379571A381E7E0050F042 /* ScreenChar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36155412CBF33E00803EA9 /* ScreenChar.m */; };
+		797379581A381E7E0050F042 /* SessionTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDC8FC1451F67D004F1615 /* SessionTitleView.m */; };
+		797379591A381E7E0050F042 /* SessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E813012A18F7500F3D71E /* SessionView.m */; };
+		7973795A1A381E7E0050F042 /* SplitSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29732A14082A52004C5DBE /* SplitSelectionView.m */; };
+		7973795B1A381E7E0050F042 /* SplitPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AF5713FD781700C8A435 /* SplitPanel.m */; };
+		7973795C1A381E7E0050F042 /* ThreeFingerTapGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6944D5169E96AC00C7048A /* ThreeFingerTapGestureRecognizer.h */; };
+		7973795D1A381E7E0050F042 /* ThreeFingerTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6944D6169E96AC00C7048A /* ThreeFingerTapGestureRecognizer.m */; };
+		7973795E1A381E7E0050F042 /* ToastWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D085FA016F138A000B7FCE9 /* ToastWindowController.h */; };
+		7973795F1A381E7E0050F042 /* ToastWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085FA116F138A000B7FCE9 /* ToastWindowController.m */; };
+		797379601A381E7E0050F042 /* Trouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D06A04F134CDBED00C414EF /* Trouter.m */; };
+		797379611A381E7E0050F042 /* TextViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44218B1290B34500891504 /* TextViewWrapper.m */; };
+		797379621A381E7E0050F042 /* VT100Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CF7562026DDA6303A80106 /* VT100Screen.m */; };
+		797379631A381E7E0050F042 /* VT100Terminal.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CF7563026DDA6303A80106 /* VT100Terminal.m */; };
+		797379641A381E7E0050F042 /* SolidColorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DC38816148E840600B89F7C /* SolidColorView.h */; };
+		797379651A381E7E0050F042 /* SolidColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC38817148E840700B89F7C /* SolidColorView.m */; };
+		797379661A381E7E0050F042 /* ColorsMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A073973F14C7694600786414 /* ColorsMenuItemView.m */; };
+		797379671A381E7E0050F042 /* PTYFontInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D70BA331680158700824B72 /* PTYFontInfo.h */; };
+		797379681A381E7E0050F042 /* PTYFontInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D70BA341680158700824B72 /* PTYFontInfo.m */; };
+		797379691A3821160050F042 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB293D1288899A00B2CB9F /* Carbon.framework */; };
+		7973796A1A3821180050F042 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF0897013DBAF4C00A52AD8 /* Quartz.framework */; };
+		7973796B1A38211C0050F042 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AA395D18275EF200A19BD5 /* ScriptingBridge.framework */; };
+		7973796C1A3821290050F042 /* libncurses.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D13EADB12113A2D00909F9C /* libncurses.dylib */; };
+		7973796F1A3821530050F042 /* Growl in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA7894714AC19F500C8FBD9 /* Growl */; };
+		797379701A3821560050F042 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E2DED70AE2F67200D20B3B /* Sparkle.framework */; };
+		797379711A3821660050F042 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0464AB2F006CD2EC7F000001 /* AppKit.framework */; };
+		797379721A3821C30050F042 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D85D1D81306687700A3E998 /* RegexKitLite.h */; };
+		797379731A3821C30050F042 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D85D1DA1306687700A3E998 /* RegexKitLite.m */; };
+		797379741A3821CC0050F042 /* PSMAdiumTabStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = F62D15EE0AA64B2F0075A287 /* PSMAdiumTabStyle.h */; };
+		797379751A3821CC0050F042 /* PSMAdiumTabStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D15EF0AA64B2F0075A287 /* PSMAdiumTabStyle.m */; };
+		797379761A3821CC0050F042 /* PSMTabDragWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = F62D15F00AA64B2F0075A287 /* PSMTabDragWindow.h */; };
+		797379771A3821CC0050F042 /* PSMTabDragWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D15F10AA64B2F0075A287 /* PSMTabDragWindow.m */; };
+		797379781A3821CC0050F042 /* NSBezierPath_AMShading.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E708B50A9D0EA400D0C4EF /* NSBezierPath_AMShading.h */; };
+		797379791A3821CC0050F042 /* NSBezierPath_AMShading.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E708B60A9D0EA400D0C4EF /* NSBezierPath_AMShading.m */; };
+		7973797A1A3821CC0050F042 /* PSMTabDragAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E708B70A9D0EA400D0C4EF /* PSMTabDragAssistant.h */; };
+		7973797B1A3821CC0050F042 /* PSMTabDragAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E708B80A9D0EA400D0C4EF /* PSMTabDragAssistant.m */; };
+		7973797C1A3821CC0050F042 /* PSMOverflowPopUpButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02572809CB9398008F320C /* PSMOverflowPopUpButton.h */; };
+		7973797D1A3821CC0050F042 /* PSMOverflowPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD02572A09CB9398008F320C /* PSMOverflowPopUpButton.m */; };
+		7973797E1A3821CC0050F042 /* PSMProgressIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02572C09CB9398008F320C /* PSMProgressIndicator.h */; };
+		7973797F1A3821CC0050F042 /* PSMProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DD02572D09CB9398008F320C /* PSMProgressIndicator.m */; };
+		797379801A3821CC0050F042 /* PSMRolloverButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02572E09CB9398008F320C /* PSMRolloverButton.h */; };
+		797379811A3821CC0050F042 /* PSMRolloverButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD02572F09CB9398008F320C /* PSMRolloverButton.m */; };
+		797379821A3821CC0050F042 /* PSMTabBarCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02573009CB9398008F320C /* PSMTabBarCell.h */; };
+		797379831A3821CC0050F042 /* PSMTabBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD02573109CB9398008F320C /* PSMTabBarCell.m */; };
+		797379841A3821CC0050F042 /* PSMTabBarControl.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02573209CB9398008F320C /* PSMTabBarControl.h */; };
+		797379851A3821CC0050F042 /* PSMTabBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DD02573309CB9398008F320C /* PSMTabBarControl.m */; };
+		797379861A3821CC0050F042 /* PSMUnifiedTabStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E708B90A9D0EA400D0C4EF /* PSMUnifiedTabStyle.h */; };
+		797379871A3821CC0050F042 /* PSMUnifiedTabStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E708BA0A9D0EA400D0C4EF /* PSMUnifiedTabStyle.m */; };
+		797379881A3821CC0050F042 /* PSMAquaTabStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02572409CB9398008F320C /* PSMAquaTabStyle.h */; };
+		797379891A3821CC0050F042 /* PSMAquaTabStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DD02572509CB9398008F320C /* PSMAquaTabStyle.m */; };
+		7973798A1A3821CC0050F042 /* PSMMetalTabStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02572609CB9398008F320C /* PSMMetalTabStyle.h */; };
+		7973798B1A3821CC0050F042 /* PSMMetalTabStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DD02572709CB9398008F320C /* PSMMetalTabStyle.m */; };
+		7973798C1A3821CC0050F042 /* PSMTabStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DD02573909CB9398008F320C /* PSMTabStyle.h */; };
+		7973798D1A3821D50050F042 /* CarbonHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F620E748404000EC682 /* CarbonHelpers.h */; };
+		7973798E1A3821D50050F042 /* CGSAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F630E748404000EC682 /* CGSAccessibility.h */; };
+		7973798F1A3821D50050F042 /* CGSCIFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F640E748404000EC682 /* CGSCIFilter.h */; };
+		797379901A3821D50050F042 /* CGSConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F650E748404000EC682 /* CGSConnection.h */; };
+		797379911A3821D50050F042 /* CGSCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F660E748404000EC682 /* CGSCursor.h */; };
+		797379921A3821D50050F042 /* CGSDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F670E748404000EC682 /* CGSDebug.h */; };
+		797379931A3821D50050F042 /* CGSDisplays.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F680E748404000EC682 /* CGSDisplays.h */; };
+		797379941A3821D50050F042 /* CGSHotKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F690E748404000EC682 /* CGSHotKeys.h */; };
+		797379951A3821D50050F042 /* CGSInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F6A0E748404000EC682 /* CGSInternal.h */; };
+		797379961A3821D50050F042 /* CGSMisc.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F6B0E748404000EC682 /* CGSMisc.h */; };
+		797379971A3821D50050F042 /* CGSNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F6C0E748404000EC682 /* CGSNotifications.h */; };
+		797379981A3821D50050F042 /* CGSRegion.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F6D0E748404000EC682 /* CGSRegion.h */; };
+		797379991A3821D50050F042 /* CGSSession.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F6E0E748404000EC682 /* CGSSession.h */; };
+		7973799A1A3821D50050F042 /* CGSTransitions.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F6F0E748404000EC682 /* CGSTransitions.h */; };
+		7973799B1A3821D50050F042 /* CGSWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F700E748404000EC682 /* CGSWindow.h */; };
+		7973799C1A3821D50050F042 /* CGSWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F710E748404000EC682 /* CGSWorkspace.h */; };
+		7973799D1A3821D50050F042 /* Compatability.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A6E4081211CC6000D9AD6F /* Compatability.h */; };
+		7973799E1A3821F40050F042 /* UKCrashReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94EAA512D64022008225A9 /* UKCrashReporter.h */; };
+		7973799F1A3821F40050F042 /* UKCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D94EAA612D64022008225A9 /* UKCrashReporter.m */; };
+		797379A01A3821F40050F042 /* UKCrashReporter.nib in Resources */ = {isa = PBXBuildFile; fileRef = 1D94EAA712D64022008225A9 /* UKCrashReporter.nib */; };
+		797379A11A3821F40050F042 /* UKCrashReporter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D94EAA812D64022008225A9 /* UKCrashReporter.strings */; };
+		797379A21A3821F40050F042 /* UKNibOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94EAA912D64022008225A9 /* UKNibOwner.h */; };
+		797379A31A3821F40050F042 /* UKNibOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D94EAAA12D64022008225A9 /* UKNibOwner.m */; };
+		797379A41A3821F40050F042 /* UKSystemInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94EAAB12D64022008225A9 /* UKSystemInfo.h */; };
+		797379A51A3821F40050F042 /* UKSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D94EAAC12D64022008225A9 /* UKSystemInfo.m */; };
+		797379A61A3824020050F042 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 93A6FEF910685E9900A5F905 /* dsa_pub.pem */; };
+		797379A71A38243B0050F042 /* UKCrashReporter Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D94EAA412D64022008225A9 /* UKCrashReporter Readme.txt */; };
+		797379A81A38245F0050F042 /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB151F2903648AC401F955DB /* iTerm.strings */; };
+		797379A91A3824620050F042 /* iTerm.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = DD48F1CC03EBB20500A8A065 /* iTerm.scriptTerminology */; };
+		797379AA1A3824650050F042 /* iTerm.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = DD48F1C703EBB1C400A8A065 /* iTerm.scriptSuite */; };
+		797379AB1A38246E0050F042 /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = F6C9AFEF0EA70D0200D318A8 /* sort.png */; };
+		797379AC1A3824740050F042 /* iTerm.icns in Resources */ = {isa = PBXBuildFile; fileRef = E8EDCE69015E0A5703000001 /* iTerm.icns */; };
+		797379AD1A3824740050F042 /* iTerm.png in Resources */ = {isa = PBXBuildFile; fileRef = FBBB8B60039FC04E01F955DB /* iTerm.png */; };
+		797379AE1A3824740050F042 /* iTerm-Aqua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD9C1AE2051F45C000A8A065 /* iTerm-Aqua.jpg */; };
+		797379AF1A3824740050F042 /* addressbook.png in Resources */ = {isa = PBXBuildFile; fileRef = FB094A14033D58AE01F955DB /* addressbook.png */; };
+		797379B01A3824740050F042 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = FB094A16033D58B601F955DB /* close.png */; };
+		797379B11A3824740050F042 /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = FB754C5F036EFC5301F955DB /* config.png */; };
+		797379B21A3824740050F042 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DA0AFC0AF066EE0098EFEB /* edit.png */; };
+		797379B31A3824740050F042 /* exec.png in Resources */ = {isa = PBXBuildFile; fileRef = FB47BCC403686CAC01F955DB /* exec.png */; };
+		797379B41A3824740050F042 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = F6CDC4E60AE6D3E2005E7D4F /* folder.png */; };
+		797379B51A3824740050F042 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = FB094A18033D58BD01F955DB /* new.png */; };
+		797379B61A3824740050F042 /* newwin.png in Resources */ = {isa = PBXBuildFile; fileRef = FB896717038D935801F955DB /* newwin.png */; };
+		797379B71A3824800050F042 /* PasteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D085F8816F030FB00B7FCE9 /* PasteView.xib */; };
+		797379B81A3824890050F042 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9325FF4E0FB54E00004EC67C /* MainMenu.xib */; };
+		797379B91A38248D0050F042 /* PseudoTerminal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9325FF3C0FB54DF1004EC67C /* PseudoTerminal.xib */; };
+		797379BA1A3824910050F042 /* PreferencePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9325FF400FB54DF1004EC67C /* PreferencePanel.xib */; };
+		797379BB1A3824950050F042 /* ProfilesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9325FF460FB54DF1004EC67C /* ProfilesWindow.xib */; };
+		797379BC1A3824980050F042 /* TmuxDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD4CE7C14A5163B00ED182E /* TmuxDashboard.xib */; };
+		797379BD1A38249B0050F042 /* FindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D237D8E131D8BEE004DD60C /* FindView.xib */; };
+		797379BE1A38249F0050F042 /* SplitPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D844C8B13FD8B7700CD4F85 /* SplitPanel.xib */; };
+		797379BF1A3824A20050F042 /* PasteboardHistory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D7C1AD11276FD6E00461E55 /* PasteboardHistory.xib */; };
+		797379C01A3824A50050F042 /* Autocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE2154112821F1C004E3ADF /* Autocomplete.xib */; };
+		797379C11A3824A90050F042 /* GlobalSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D99785112EEB3D600F0794D /* GlobalSearch.xib */; };
+		797379C21A3824C00050F042 /* TabClose_Front_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B287165F3669000046EE /* TabClose_Front_Pressed.png */; };
+		797379C31A3824C00050F042 /* TabClose_Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B288165F3669000046EE /* TabClose_Front.png */; };
+		797379C41A3824C00050F042 /* AquaTabClose_Front_Rollover.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B289165F3669000046EE /* AquaTabClose_Front_Rollover.png */; };
+		797379C51A3824C00050F042 /* AquaTabClose_Front_Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B28A165F3669000046EE /* AquaTabClose_Front_Pressed.png */; };
+		797379C61A3824C00050F042 /* AquaTabClose_Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B28B165F3669000046EE /* AquaTabClose_Front.png */; };
+		797379C71A3824C00050F042 /* AquaTabClose_Front_Rollover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B27B165F362B000046EE /* AquaTabClose_Front_Rollover@2x.png */; };
+		797379C81A3824C00050F042 /* AquaTabClose_Front_Pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B27C165F362B000046EE /* AquaTabClose_Front_Pressed@2x.png */; };
+		797379C91A3824C00050F042 /* AquaTabClose_Front@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B27D165F362B000046EE /* AquaTabClose_Front@2x.png */; };
+		797379CA1A3824C00050F042 /* TabClose_Front_Rollover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B27E165F362B000046EE /* TabClose_Front_Rollover@2x.png */; };
+		797379CB1A3824C00050F042 /* TabClose_Front_Pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B27F165F362B000046EE /* TabClose_Front_Pressed@2x.png */; };
+		797379CC1A3824C00050F042 /* TabClose_Front@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B280165F362B000046EE /* TabClose_Front@2x.png */; };
+		797379CD1A3824C00050F042 /* AquaTabNew.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02575B09CB93C2008F320C /* AquaTabNew.png */; };
+		797379CE1A3824C00050F042 /* AquaTabNewPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02575C09CB93C2008F320C /* AquaTabNewPressed.png */; };
+		797379CF1A3824C00050F042 /* AquaTabNewRollover.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02575D09CB93C2008F320C /* AquaTabNewRollover.png */; };
+		797379D01A3824C00050F042 /* AquaTabsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02575E09CB93C2008F320C /* AquaTabsBackground.png */; };
+		797379D11A3824C00050F042 /* AquaTabsDown.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02575F09CB93C2008F320C /* AquaTabsDown.png */; };
+		797379D21A3824C00050F042 /* AquaTabsDownGraphite.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02576009CB93C2008F320C /* AquaTabsDownGraphite.png */; };
+		797379D31A3824C00050F042 /* AquaTabsDownNonKey.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02576109CB93C2008F320C /* AquaTabsDownNonKey.png */; };
+		797379D41A3824C00050F042 /* AquaTabsSeparator.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02576209CB93C2008F320C /* AquaTabsSeparator.png */; };
+		797379D51A3824C00050F042 /* AquaTabsSeparatorDown.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02576309CB93C2008F320C /* AquaTabsSeparatorDown.png */; };
+		797379D61A3824C00050F042 /* overflowImage.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DD02576609CB93C2008F320C /* overflowImage.tiff */; };
+		797379D71A3824C00050F042 /* overflowImagePressed.tif in Resources */ = {isa = PBXBuildFile; fileRef = DD02576709CB93C2008F320C /* overflowImagePressed.tif */; };
+		797379D81A3824C00050F042 /* pi.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02576809CB93C2008F320C /* pi.png */; };
+		797379D91A3824C00050F042 /* TabNewMetal.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02576E09CB93C2008F320C /* TabNewMetal.png */; };
+		797379DA1A3824C00050F042 /* TabNewMetalPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02576F09CB93C2008F320C /* TabNewMetalPressed.png */; };
+		797379DB1A3824C00050F042 /* TabNewMetalRollover.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02577009CB93C2008F320C /* TabNewMetalRollover.png */; };
+		797379DC1A3824C00050F042 /* Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = DD02577109CB93C2008F320C /* Warning.png */; };
+		797379DD1A3824D20050F042 /* OnlineHelp in Resources */ = {isa = PBXBuildFile; fileRef = A6C537B8192DD54A00A08C18 /* OnlineHelp */; };
+		797379DE1A3824DC0050F042 /* PrefsProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6E2176CB4D80071CCF8 /* PrefsProfile.png */; };
+		797379DF1A3824DC0050F042 /* PrefsProfile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6E3176CB4D80071CCF8 /* PrefsProfile@2x.png */; };
+		797379E01A3824DC0050F042 /* PrefsAppearance.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6DE176C8F0B0071CCF8 /* PrefsAppearance.png */; };
+		797379E11A3824DC0050F042 /* PrefsAppearance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6DF176C8F0B0071CCF8 /* PrefsAppearance@2x.png */; };
+		797379E21A3824DC0050F042 /* PrefsKeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6E6176CBC0C0071CCF8 /* PrefsKeyboard.png */; };
+		797379E31A3824DC0050F042 /* PrefsKeyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6E7176CBC0C0071CCF8 /* PrefsKeyboard@2x.png */; };
+		797379E41A3824DC0050F042 /* PrefsMouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6EA176CC47E0071CCF8 /* PrefsMouse.png */; };
+		797379E51A3824DC0050F042 /* PrefsMouse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6EB176CC47E0071CCF8 /* PrefsMouse@2x.png */; };
+		797379E61A3824DC0050F042 /* PrefsArrangements.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6EE176CCABE0071CCF8 /* PrefsArrangements.png */; };
+		797379E71A3824DC0050F042 /* PrefsArrangements@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3D6EF176CCABE0071CCF8 /* PrefsArrangements@2x.png */; };
+		797379E81A3824DC0050F042 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B2F8165F45BA000046EE /* star@2x.png */; };
+		797379E91A3824DC0050F042 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B293165F4416000046EE /* star.png */; };
+		797379EA1A3824DC0050F042 /* important@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D48B291165F405A000046EE /* important@2x.png */; };
+		797379EB1A3824DC0050F042 /* important.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB2EBCD040AC7C201F955DB /* important.png */; };
+		797379EC1A3824DC0050F042 /* IBarCursor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA34E02165F268F00AA91C4 /* IBarCursor@2x.png */; };
+		797379ED1A3824DF0050F042 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE4AE914514058002A9CC2 /* Growl Registration Ticket.growlRegDict */; };
+		797379EE1A3824E30050F042 /* Coprocess.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D9DDE9D142E855D00275650 /* Coprocess.png */; };
+		797379EF1A3824E30050F042 /* closebutton.tif in Resources */ = {isa = PBXBuildFile; fileRef = 1D19C3621415998E00617E08 /* closebutton.tif */; };
+		797379F01A3824E30050F042 /* IBarCursorXMR.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A5FDE140D7AA000DE19F8 /* IBarCursorXMR.png */; };
+		797379F11A3824E30050F042 /* IBarCursorXMR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA34E03165F268F00AA91C4 /* IBarCursorXMR@2x.png */; };
+		797379F21A3824E30050F042 /* BroadcastInput.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F396A13EB7A2C0025B80B /* BroadcastInput.png */; };
+		797379F31A3824E30050F042 /* SmartSelectionRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D395912134E75B5005A8021 /* SmartSelectionRules.plist */; };
+		797379F41A3824E30050F042 /* bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA02CFA1327612600D7E7DB /* bell.png */; };
+		797379F51A3824E30050F042 /* wrap_to_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA030F71328BD7C00D7E7DB /* wrap_to_bottom.png */; };
+		797379F61A3824E30050F042 /* wrap_to_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA030F81328BD7C00D7E7DB /* wrap_to_top.png */; };
+		797379F71A3824E30050F042 /* IBarCursor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC7429F127C96F90069594C /* IBarCursor.png */; };
+		797379F81A3824EA0050F042 /* DefaultGlobalKeyMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D53A6AE1232DA3B00B7767B /* DefaultGlobalKeyMap.plist */; };
+		797379F91A3824EA0050F042 /* EncodingsWithLowerCase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C6BF4126592DF00E2744E /* EncodingsWithLowerCase.plist */; };
+		797379FA1A3824EA0050F042 /* ColorPresets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D6C4D59122329F000E0AA3E /* ColorPresets.plist */; };
+		797379FB1A3824EA0050F042 /* DefaultBookmark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EC51224D03D00AD56F1 /* DefaultBookmark.plist */; };
+		797379FC1A3824EA0050F042 /* MigrationMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3EFF1224EEBD00AD56F1 /* MigrationMap.plist */; };
+		797379FD1A3824ED0050F042 /* PrefsGeneral.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D737D5D17495B4100B3334D /* PrefsGeneral.png */; };
+		797379FE1A3824ED0050F042 /* PrefsGeneral@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D737D5E17495B4100B3334D /* PrefsGeneral@2x.png */; };
+		797379FF1A3824F00050F042 /* xterm-terminfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DB72CF51396059200EB1005 /* xterm-terminfo.txt */; };
+		79737A001A3824F40050F042 /* PresetKeyMappings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3CB61222FF1400AD56F1 /* PresetKeyMappings.plist */; };
+		79737A011A3824F40050F042 /* DefaultPointerActions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D8255F8146869D8007CAE78 /* DefaultPointerActions.plist */; };
+		79737A061A3826260050F042 /* TestViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79737A031A3826260050F042 /* TestViewController.h */; };
+		79737A071A3826260050F042 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79737A041A3826260050F042 /* TestViewController.m */; };
+		79737A081A3826260050F042 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79737A051A3826260050F042 /* TestViewController.xib */; };
 		874206490564169600CFC3F1 /* iTermApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D5CC6304E7AA0500000106 /* iTermApplicationDelegate.h */; };
 		8742064D0564169600CFC3F1 /* iTerm.icns in Resources */ = {isa = PBXBuildFile; fileRef = E8EDCE69015E0A5703000001 /* iTerm.icns */; };
 		8742064F0564169600CFC3F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CF757F026DDAD703A80106 /* main.m */; };
@@ -714,6 +1119,11 @@
 		5ECE005E1454E59B004861E9 /* PseudoTerminalRestorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PseudoTerminalRestorer.m; sourceTree = "<group>"; };
 		5ECE4AC41451343E002A9CC2 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		5ECE4AE914514058002A9CC2 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		7973784D1A381D8F0050F042 /* iTermEmbedded.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTermEmbedded.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		797378501A381D8F0050F042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79737A031A3826260050F042 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		79737A041A3826260050F042 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		79737A051A3826260050F042 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		872EBC5304E42E320073D10E /* NSStringITerm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSStringITerm.h; path = Headers/iTerm/NSStringITerm.h; sourceTree = "<group>"; };
 		872EBC5404E42E320073D10E /* PTYTextView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PTYTextView.h; path = Headers/iTerm/PTYTextView.h; sourceTree = "<group>"; };
 		872EBC5704E42E320073D10E /* PTYTabView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PTYTabView.h; path = Headers/iTerm/PTYTabView.h; sourceTree = "<group>"; };
@@ -852,6 +1262,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		797378491A381D8F0050F042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7973796B1A38211C0050F042 /* ScriptingBridge.framework in Frameworks */,
+				797379711A3821660050F042 /* AppKit.framework in Frameworks */,
+				797379701A3821560050F042 /* Sparkle.framework in Frameworks */,
+				7973796C1A3821290050F042 /* libncurses.dylib in Frameworks */,
+				797379691A3821160050F042 /* Carbon.framework in Frameworks */,
+				7973796A1A3821180050F042 /* Quartz.framework in Frameworks */,
+				7973796F1A3821530050F042 /* Growl in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		874206510564169600CFC3F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -872,6 +1296,7 @@
 		0464AB0D006CD2EC7F000001 /* JTerminal */ = {
 			isa = PBXGroup;
 			children = (
+				79737A021A3826030050F042 /* Devolutions */,
 				0464AB0E006CD2EC7F000001 /* Classes */,
 				0464AB15006CD2EC7F000001 /* Headers */,
 				0464AB1F006CD2EC7F000001 /* Other Sources */,
@@ -884,6 +1309,7 @@
 				0464AB27006CD2EC7F000001 /* Supporting Files */,
 				0464AB2E006CD2EC7F000001 /* External Frameworks and Libraries */,
 				1D94EAA312D64022008225A9 /* UKCrashReporter */,
+				7973784E1A381D8F0050F042 /* iTerm-Embedded */,
 				0464AB32006CD2EC7F000001 /* Products */,
 				F69E774A0AB78CDB001EC0FF /* Growl-Info.plist */,
 				1D13EADB12113A2D00909F9C /* libncurses.dylib */,
@@ -1169,6 +1595,7 @@
 			isa = PBXGroup;
 			children = (
 				8742065A0564169600CFC3F1 /* iTerm.app */,
+				7973784D1A381D8F0050F042 /* iTermEmbedded.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1387,6 +1814,32 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		7973784E1A381D8F0050F042 /* iTerm-Embedded */ = {
+			isa = PBXGroup;
+			children = (
+				7973784F1A381D8F0050F042 /* Supporting Files */,
+			);
+			path = "iTerm-Embedded";
+			sourceTree = "<group>";
+		};
+		7973784F1A381D8F0050F042 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				797378501A381D8F0050F042 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79737A021A3826030050F042 /* Devolutions */ = {
+			isa = PBXGroup;
+			children = (
+				79737A031A3826260050F042 /* TestViewController.h */,
+				79737A041A3826260050F042 /* TestViewController.m */,
+				79737A051A3826260050F042 /* TestViewController.xib */,
+			);
+			name = Devolutions;
+			sourceTree = "<group>";
+		};
 		A6F6C520182765990077ADC2 /* ScriptingBridgeGeneratedCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1499,6 +1952,186 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		7973784A1A381D8F0050F042 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797378901A381E400050F042 /* ToolNotes.h in Headers */,
+				797378BF1A381E410050F042 /* iTermApplication.h in Headers */,
+				797378DC1A381E410050F042 /* VT100Screen.h in Headers */,
+				797378E61A381E580050F042 /* EquivalenceClassSet.h in Headers */,
+				7973794F1A381E7E0050F042 /* PTYSplitView.h in Headers */,
+				797379291A381E7E0050F042 /* CharacterRunInline.h in Headers */,
+				797378CF1A381E410050F042 /* PseudoTerminal.h in Headers */,
+				797378D11A381E410050F042 /* PTYSession.h in Headers */,
+				7973787F1A381E400050F042 /* PTYWindow.h in Headers */,
+				797378C51A381E410050F042 /* iTermSearchField.h in Headers */,
+				7973797E1A3821CC0050F042 /* PSMProgressIndicator.h in Headers */,
+				797379881A3821CC0050F042 /* PSMAquaTabStyle.h in Headers */,
+				797378F21A381E580050F042 /* TmuxSessionsTable.h in Headers */,
+				7973788C1A381E400050F042 /* SessionTitleView.h in Headers */,
+				797379991A3821D50050F042 /* CGSSession.h in Headers */,
+				797379961A3821D50050F042 /* CGSMisc.h in Headers */,
+				7973786F1A381E400050F042 /* ProfileModelWrapper.h in Headers */,
+				7973789C1A381E400050F042 /* Trigger.h in Headers */,
+				797378A11A381E400050F042 /* ToolPasteHistory.h in Headers */,
+				7973790C1A381E630050F042 /* NSBezierPath+iTerm.h in Headers */,
+				797378991A381E400050F042 /* NSImage+CoreImage.h in Headers */,
+				797378DD1A381E410050F042 /* VT100Terminal.h in Headers */,
+				797378981A381E400050F042 /* NSBitmapImageRep+CoreImage.h in Headers */,
+				797378911A381E400050F042 /* PseudoTerminalRestorer.h in Headers */,
+				7973786E1A381E400050F042 /* ProfileTableRow.h in Headers */,
+				797378DB1A381E410050F042 /* Trouter.h in Headers */,
+				797378AF1A381E400050F042 /* NSFileManager+DirectoryLocations.h in Headers */,
+				797378D41A381E410050F042 /* PTYTask.h in Headers */,
+				797378961A381E400050F042 /* ScriptTrigger.h in Headers */,
+				7973798A1A3821CC0050F042 /* PSMMetalTabStyle.h in Headers */,
+				797379911A3821D50050F042 /* CGSCursor.h in Headers */,
+				7973798F1A3821D50050F042 /* CGSCIFilter.h in Headers */,
+				797378941A381E400050F042 /* CoprocessTrigger.h in Headers */,
+				797378B61A381E400050F042 /* FindView.h in Headers */,
+				797378871A381E400050F042 /* TmuxWindowOpener.h in Headers */,
+				7973789F1A381E400050F042 /* FutureMethods.h in Headers */,
+				7973788A1A381E400050F042 /* PointerController.h in Headers */,
+				797379821A3821CC0050F042 /* PSMTabBarCell.h in Headers */,
+				797378C61A381E410050F042 /* ITAddressBookMgr.h in Headers */,
+				7973793F1A381E7E0050F042 /* PasteContext.h in Headers */,
+				797378851A381E400050F042 /* TSVParser.h in Headers */,
+				797378AA1A381E400050F042 /* BookmarkModel.h in Headers */,
+				797378CA1A381E410050F042 /* NSStringITerm.h in Headers */,
+				7973788D1A381E400050F042 /* TrouterPrefsController.h in Headers */,
+				797378A71A381E400050F042 /* WindowArrangements.h in Headers */,
+				797378791A381E400050F042 /* PseudoTerminal.h in Headers */,
+				797378F51A381E580050F042 /* TmuxControllerRegistry.h in Headers */,
+				797378711A381E400050F042 /* ProfileModel.h in Headers */,
+				797378AB1A381E400050F042 /* ProfileListView.h in Headers */,
+				797378731A381E400050F042 /* charmaps.h in Headers */,
+				797378D51A381E410050F042 /* PTYTextView.h in Headers */,
+				797379A21A3821F40050F042 /* UKNibOwner.h in Headers */,
+				797378D01A381E410050F042 /* PTYScrollView.h in Headers */,
+				797379011A381E5E0050F042 /* ContextMenuActionPrefsController.h in Headers */,
+				797378BD1A381E410050F042 /* GTMTypeCasting.h in Headers */,
+				7973789D1A381E400050F042 /* Coprocess.h in Headers */,
+				797378751A381E400050F042 /* iTermController.h in Headers */,
+				797379921A3821D50050F042 /* CGSDebug.h in Headers */,
+				797379381A381E7E0050F042 /* iTermFontPanel.h in Headers */,
+				797378C81A381E410050F042 /* LineBuffer.h in Headers */,
+				7973798D1A3821D50050F042 /* CarbonHelpers.h in Headers */,
+				797379951A3821D50050F042 /* CGSInternal.h in Headers */,
+				7973787E1A381E400050F042 /* PTYTextView.h in Headers */,
+				7973789B1A381E400050F042 /* GrowlTrigger.h in Headers */,
+				797378BE1A381E410050F042 /* iTerm.h in Headers */,
+				797378AC1A381E400050F042 /* ProfilesWindow.h in Headers */,
+				797378761A381E400050F042 /* iTermKeyBindingMgr.h in Headers */,
+				797379841A3821CC0050F042 /* PSMTabBarControl.h in Headers */,
+				797378831A381E400050F042 /* TmuxGateway.h in Headers */,
+				797378781A381E400050F042 /* PreferencePanel.h in Headers */,
+				7973788F1A381E400050F042 /* SendTextTrigger.h in Headers */,
+				797378A51A381E400050F042 /* ToolJobs.h in Headers */,
+				797378C71A381E410050F042 /* ITViewLocalizer.h in Headers */,
+				797378F31A381E580050F042 /* TmuxWindowsTable.h in Headers */,
+				797378721A381E400050F042 /* BookmarksController.h in Headers */,
+				797378F01A381E580050F042 /* TmuxDashboardController.h in Headers */,
+				797379761A3821CC0050F042 /* PSMTabDragWindow.h in Headers */,
+				797378A41A381E400050F042 /* ToolProfiles.h in Headers */,
+				797379801A3821CC0050F042 /* PSMRolloverButton.h in Headers */,
+				797378BC1A381E410050F042 /* GTMObjectSingleton.h in Headers */,
+				797378A81A381E400050F042 /* SplitSelectionView.h in Headers */,
+				797378D81A381E410050F042 /* ScreenChar.h in Headers */,
+				797378FF1A381E5E0050F042 /* EventMonitorView.h in Headers */,
+				7973797A1A3821CC0050F042 /* PSMTabDragAssistant.h in Headers */,
+				7973795E1A381E7E0050F042 /* ToastWindowController.h in Headers */,
+				797378D21A381E410050F042 /* PTYTab.h in Headers */,
+				797378CE1A381E410050F042 /* ProcessCache.h in Headers */,
+				797378D71A381E410050F042 /* PTToolbarController.h in Headers */,
+				7973798E1A3821D50050F042 /* CGSAccessibility.h in Headers */,
+				7973799C1A3821D50050F042 /* CGSWorkspace.h in Headers */,
+				797379031A381E630050F042 /* NSView+RecursiveDescription.h in Headers */,
+				797379281A381E7E0050F042 /* CharacterRun.h in Headers */,
+				797378A61A381E400050F042 /* ToolbeltView.h in Headers */,
+				797379A41A3821F40050F042 /* UKSystemInfo.h in Headers */,
+				7973789A1A381E400050F042 /* BounceTrigger.h in Headers */,
+				7973787B1A381E400050F042 /* PTYSession.h in Headers */,
+				797378811A381E400050F042 /* VT100Terminal.h in Headers */,
+				797378AE1A381E400050F042 /* DVR.h in Headers */,
+				797378B41A381E400050F042 /* FakeWindow.h in Headers */,
+				797379741A3821CC0050F042 /* PSMAdiumTabStyle.h in Headers */,
+				797378891A381E400050F042 /* HighlightTrigger.h in Headers */,
+				797378CD1A381E410050F042 /* PreferencePanel.h in Headers */,
+				797378A91A381E400050F042 /* SplitPanel.h in Headers */,
+				797378DE1A381E4B0050F042 /* SBSystemPreferences.h in Headers */,
+				797378C01A381E410050F042 /* iTermApplicationDelegate.h in Headers */,
+				797378CC1A381E410050F042 /* Popup.h in Headers */,
+				797379981A3821D50050F042 /* CGSRegion.h in Headers */,
+				797378B71A381E400050F042 /* FindViewController.h in Headers */,
+				797378951A381E400050F042 /* AlertTrigger.h in Headers */,
+				797379941A3821D50050F042 /* CGSHotKeys.h in Headers */,
+				797379641A381E7E0050F042 /* SolidColorView.h in Headers */,
+				797379431A381E7E0050F042 /* PasteView.h in Headers */,
+				797379451A381E7E0050F042 /* PasteViewController.h in Headers */,
+				797378C41A381E410050F042 /* iTermKeyBindingMgr.h in Headers */,
+				797378C31A381E410050F042 /* iTermGrowlDelegate.h in Headers */,
+				7973788E1A381E400050F042 /* SmartSelectionController.h in Headers */,
+				797378821A381E400050F042 /* IntervalMap.h in Headers */,
+				797378B51A381E400050F042 /* FindCommandHandler.h in Headers */,
+				7973799A1A3821D50050F042 /* CGSTransitions.h in Headers */,
+				797378EE1A381E580050F042 /* TmuxStateParser.h in Headers */,
+				7973789E1A381E400050F042 /* ToolWrapper.h in Headers */,
+				797379901A3821D50050F042 /* CGSConnection.h in Headers */,
+				797378C91A381E410050F042 /* NSDateFormatterExtras.h in Headers */,
+				797378B11A381E400050F042 /* DVRDecoder.h in Headers */,
+				797378A01A381E400050F042 /* ArrangementPreviewView.h in Headers */,
+				797379721A3821C30050F042 /* RegexKitLite.h in Headers */,
+				797378AD1A381E400050F042 /* charmaps.h in Headers */,
+				797378921A381E400050F042 /* Autocomplete.h in Headers */,
+				797379781A3821CC0050F042 /* NSBezierPath_AMShading.h in Headers */,
+				7973799E1A3821F40050F042 /* UKCrashReporter.h in Headers */,
+				79737A061A3826260050F042 /* TestViewController.h in Headers */,
+				797378841A381E400050F042 /* TmuxController.h in Headers */,
+				7973798C1A3821CC0050F042 /* PSMTabStyle.h in Headers */,
+				797378B91A381E410050F042 /* GTMCarbonEvent.h in Headers */,
+				797378DA1A381E410050F042 /* TextViewWrapper.h in Headers */,
+				7973799D1A3821D50050F042 /* Compatability.h in Headers */,
+				797379051A381E630050F042 /* NSView+iTerm.h in Headers */,
+				797378BB1A381E410050F042 /* GTMDefines.h in Headers */,
+				797378C11A381E410050F042 /* iTermController.h in Headers */,
+				797378B81A381E400050F042 /* GlobalSearch.h in Headers */,
+				7973799B1A3821D50050F042 /* CGSWindow.h in Headers */,
+				797378971A381E400050F042 /* BellTrigger.h in Headers */,
+				797378B21A381E400050F042 /* DVREncoder.h in Headers */,
+				797378CB1A381E410050F042 /* PasteboardHistory.h in Headers */,
+				7973795C1A381E7E0050F042 /* ThreeFingerTapGestureRecognizer.h in Headers */,
+				797379551A381E7E0050F042 /* RoundedRectView.h in Headers */,
+				797378931A381E400050F042 /* TriggerController.h in Headers */,
+				797378D31A381E410050F042 /* PTYTabView.h in Headers */,
+				797378881A381E400050F042 /* TmuxHistoryParser.h in Headers */,
+				797378B31A381E400050F042 /* DVRIndexEntry.h in Headers */,
+				7973787C1A381E400050F042 /* PTYTabView.h in Headers */,
+				797378861A381E400050F042 /* TmuxLayoutParser.h in Headers */,
+				797378741A381E400050F042 /* iTerm.h in Headers */,
+				797378A21A381E400050F042 /* MovePaneController.h in Headers */,
+				797378BA1A381E410050F042 /* GTMDebugSelectorValidation.h in Headers */,
+				797379861A3821CC0050F042 /* PSMUnifiedTabStyle.h in Headers */,
+				797379931A3821D50050F042 /* CGSDisplays.h in Headers */,
+				7973787A1A381E400050F042 /* PTYScrollView.h in Headers */,
+				7973797C1A3821CC0050F042 /* PSMOverflowPopUpButton.h in Headers */,
+				797378D91A381E410050F042 /* SessionView.h in Headers */,
+				7973788B1A381E400050F042 /* PointerPrefsController.h in Headers */,
+				797378771A381E400050F042 /* NSStringITerm.h in Headers */,
+				797378701A381E400050F042 /* ProfileTableView.h in Headers */,
+				797378D61A381E410050F042 /* PTYWindow.h in Headers */,
+				797378B01A381E400050F042 /* DVRBuffer.h in Headers */,
+				797379971A3821D50050F042 /* CGSNotifications.h in Headers */,
+				797378C21A381E410050F042 /* iTermExpose.h in Headers */,
+				797378801A381E400050F042 /* VT100Screen.h in Headers */,
+				797379671A381E7E0050F042 /* PTYFontInfo.h in Headers */,
+				7973787D1A381E400050F042 /* PTYTask.h in Headers */,
+				797379411A381E7E0050F042 /* PasteEvent.h in Headers */,
+				797379261A381E7E0050F042 /* BackgroundThread.h in Headers */,
+				797378A31A381E400050F042 /* FontSizeEstimator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		874206480564169600CFC3F1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1683,6 +2316,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7973784C1A381D8F0050F042 /* iTerm-Embedded */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7973786C1A381D910050F042 /* Build configuration list for PBXNativeTarget "iTerm-Embedded" */;
+			buildPhases = (
+				7973784A1A381D8F0050F042 /* Headers */,
+				797378481A381D8F0050F042 /* Sources */,
+				797378491A381D8F0050F042 /* Frameworks */,
+				7973784B1A381D8F0050F042 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iTerm-Embedded";
+			productName = "iTerm-Embedded";
+			productReference = 7973784D1A381D8F0050F042 /* iTermEmbedded.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		874206460564169600CFC3F1 /* iTerm */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB024D35096EE4080021E793 /* Build configuration list for PBXNativeTarget "iTerm" */;
@@ -1710,7 +2361,12 @@
 		0464AB0C006CD2EC7F000001 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					7973784C1A381D8F0050F042 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
 			};
 			buildConfigurationList = BB024D39096EE4080021E793 /* Build configuration list for PBXProject "iTerm" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1732,11 +2388,114 @@
 			projectRoot = "";
 			targets = (
 				874206460564169600CFC3F1 /* iTerm */,
+				7973784C1A381D8F0050F042 /* iTerm-Embedded */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7973784B1A381D8F0050F042 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797379DA1A3824C00050F042 /* TabNewMetalPressed.png in Resources */,
+				797379DF1A3824DC0050F042 /* PrefsProfile@2x.png in Resources */,
+				797379B31A3824740050F042 /* exec.png in Resources */,
+				797379C51A3824C00050F042 /* AquaTabClose_Front_Pressed.png in Resources */,
+				797379D01A3824C00050F042 /* AquaTabsBackground.png in Resources */,
+				797379BF1A3824A20050F042 /* PasteboardHistory.xib in Resources */,
+				797379A91A3824620050F042 /* iTerm.scriptTerminology in Resources */,
+				797379D51A3824C00050F042 /* AquaTabsSeparatorDown.png in Resources */,
+				797379E71A3824DC0050F042 /* PrefsArrangements@2x.png in Resources */,
+				797379A81A38245F0050F042 /* iTerm.strings in Resources */,
+				797379C91A3824C00050F042 /* AquaTabClose_Front@2x.png in Resources */,
+				797379FD1A3824ED0050F042 /* PrefsGeneral.png in Resources */,
+				797379E91A3824DC0050F042 /* star.png in Resources */,
+				797379E41A3824DC0050F042 /* PrefsMouse.png in Resources */,
+				79737A011A3824F40050F042 /* DefaultPointerActions.plist in Resources */,
+				797379AA1A3824650050F042 /* iTerm.scriptSuite in Resources */,
+				797379EF1A3824E30050F042 /* closebutton.tif in Resources */,
+				79737A001A3824F40050F042 /* PresetKeyMappings.plist in Resources */,
+				797379CC1A3824C00050F042 /* TabClose_Front@2x.png in Resources */,
+				797379DB1A3824C00050F042 /* TabNewMetalRollover.png in Resources */,
+				797379B11A3824740050F042 /* config.png in Resources */,
+				797379F11A3824E30050F042 /* IBarCursorXMR@2x.png in Resources */,
+				797379F61A3824E30050F042 /* wrap_to_top.png in Resources */,
+				797379B81A3824890050F042 /* MainMenu.xib in Resources */,
+				797379F71A3824E30050F042 /* IBarCursor.png in Resources */,
+				797379E11A3824DC0050F042 /* PrefsAppearance@2x.png in Resources */,
+				797379DC1A3824C00050F042 /* Warning.png in Resources */,
+				797379BC1A3824980050F042 /* TmuxDashboard.xib in Resources */,
+				797379AC1A3824740050F042 /* iTerm.icns in Resources */,
+				797379E81A3824DC0050F042 /* star@2x.png in Resources */,
+				797379B91A38248D0050F042 /* PseudoTerminal.xib in Resources */,
+				797379D61A3824C00050F042 /* overflowImage.tiff in Resources */,
+				797379F31A3824E30050F042 /* SmartSelectionRules.plist in Resources */,
+				797379EE1A3824E30050F042 /* Coprocess.png in Resources */,
+				797379F41A3824E30050F042 /* bell.png in Resources */,
+				797379D21A3824C00050F042 /* AquaTabsDownGraphite.png in Resources */,
+				797379CE1A3824C00050F042 /* AquaTabNewPressed.png in Resources */,
+				797379DE1A3824DC0050F042 /* PrefsProfile.png in Resources */,
+				797379AB1A38246E0050F042 /* sort.png in Resources */,
+				797379B61A3824740050F042 /* newwin.png in Resources */,
+				797379F51A3824E30050F042 /* wrap_to_bottom.png in Resources */,
+				797379E51A3824DC0050F042 /* PrefsMouse@2x.png in Resources */,
+				797379F91A3824EA0050F042 /* EncodingsWithLowerCase.plist in Resources */,
+				797379A01A3821F40050F042 /* UKCrashReporter.nib in Resources */,
+				797379DD1A3824D20050F042 /* OnlineHelp in Resources */,
+				797379F21A3824E30050F042 /* BroadcastInput.png in Resources */,
+				797379EC1A3824DC0050F042 /* IBarCursor@2x.png in Resources */,
+				797379A61A3824020050F042 /* dsa_pub.pem in Resources */,
+				797379B71A3824800050F042 /* PasteView.xib in Resources */,
+				797379B01A3824740050F042 /* close.png in Resources */,
+				797379ED1A3824DF0050F042 /* Growl Registration Ticket.growlRegDict in Resources */,
+				797379AE1A3824740050F042 /* iTerm-Aqua.jpg in Resources */,
+				797379BB1A3824950050F042 /* ProfilesWindow.xib in Resources */,
+				797379D71A3824C00050F042 /* overflowImagePressed.tif in Resources */,
+				797379E31A3824DC0050F042 /* PrefsKeyboard@2x.png in Resources */,
+				797379E61A3824DC0050F042 /* PrefsArrangements.png in Resources */,
+				797379F81A3824EA0050F042 /* DefaultGlobalKeyMap.plist in Resources */,
+				797379CA1A3824C00050F042 /* TabClose_Front_Rollover@2x.png in Resources */,
+				797379C11A3824A90050F042 /* GlobalSearch.xib in Resources */,
+				797379C21A3824C00050F042 /* TabClose_Front_Pressed.png in Resources */,
+				797379A71A38243B0050F042 /* UKCrashReporter Readme.txt in Resources */,
+				797379C01A3824A50050F042 /* Autocomplete.xib in Resources */,
+				797379D81A3824C00050F042 /* pi.png in Resources */,
+				797379C41A3824C00050F042 /* AquaTabClose_Front_Rollover.png in Resources */,
+				797379BE1A38249F0050F042 /* SplitPanel.xib in Resources */,
+				797379E21A3824DC0050F042 /* PrefsKeyboard.png in Resources */,
+				797379BA1A3824910050F042 /* PreferencePanel.xib in Resources */,
+				797379CB1A3824C00050F042 /* TabClose_Front_Pressed@2x.png in Resources */,
+				797379EA1A3824DC0050F042 /* important@2x.png in Resources */,
+				797379FB1A3824EA0050F042 /* DefaultBookmark.plist in Resources */,
+				797379B51A3824740050F042 /* new.png in Resources */,
+				797379FF1A3824F00050F042 /* xterm-terminfo.txt in Resources */,
+				797379C61A3824C00050F042 /* AquaTabClose_Front.png in Resources */,
+				797379B21A3824740050F042 /* edit.png in Resources */,
+				797379C31A3824C00050F042 /* TabClose_Front.png in Resources */,
+				797379FA1A3824EA0050F042 /* ColorPresets.plist in Resources */,
+				797379F01A3824E30050F042 /* IBarCursorXMR.png in Resources */,
+				797379CF1A3824C00050F042 /* AquaTabNewRollover.png in Resources */,
+				797379A11A3821F40050F042 /* UKCrashReporter.strings in Resources */,
+				797379FE1A3824ED0050F042 /* PrefsGeneral@2x.png in Resources */,
+				797379D31A3824C00050F042 /* AquaTabsDownNonKey.png in Resources */,
+				79737A081A3826260050F042 /* TestViewController.xib in Resources */,
+				797379D91A3824C00050F042 /* TabNewMetal.png in Resources */,
+				797379C81A3824C00050F042 /* AquaTabClose_Front_Pressed@2x.png in Resources */,
+				797379FC1A3824EA0050F042 /* MigrationMap.plist in Resources */,
+				797379EB1A3824DC0050F042 /* important.png in Resources */,
+				797379AD1A3824740050F042 /* iTerm.png in Resources */,
+				797379C71A3824C00050F042 /* AquaTabClose_Front_Rollover@2x.png in Resources */,
+				797379D41A3824C00050F042 /* AquaTabsSeparator.png in Resources */,
+				797379CD1A3824C00050F042 /* AquaTabNew.png in Resources */,
+				797379AF1A3824740050F042 /* addressbook.png in Resources */,
+				797379D11A3824C00050F042 /* AquaTabsDown.png in Resources */,
+				797379E01A3824DC0050F042 /* PrefsAppearance.png in Resources */,
+				797379B41A3824740050F042 /* folder.png in Resources */,
+				797379BD1A38249B0050F042 /* FindView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8742064A0564169600CFC3F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1868,6 +2627,143 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		797378481A381D8F0050F042 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797378EA1A381E580050F042 /* TSVParser.m in Sources */,
+				797379891A3821CC0050F042 /* PSMAquaTabStyle.m in Sources */,
+				797379371A381E7E0050F042 /* iTermExpose.m in Sources */,
+				7973792C1A381E7E0050F042 /* FindView.m in Sources */,
+				797379341A381E7E0050F042 /* iTermApplication.m in Sources */,
+				797379061A381E630050F042 /* NSView+iTerm.m in Sources */,
+				797379811A3821CC0050F042 /* PSMRolloverButton.m in Sources */,
+				7973793E1A381E7E0050F042 /* MovePaneController.m in Sources */,
+				797379091A381E630050F042 /* NSFileManager+DirectoryLocations.m in Sources */,
+				797378FB1A381E5E0050F042 /* TriggerController.m in Sources */,
+				797379241A381E760050F042 /* ScriptTrigger.m in Sources */,
+				797378ED1A381E580050F042 /* TmuxHistoryParser.m in Sources */,
+				797378E31A381E500050F042 /* ProfileModelWrapper.m in Sources */,
+				797379471A381E7E0050F042 /* PointerController.m in Sources */,
+				79737A071A3826260050F042 /* TestViewController.m in Sources */,
+				7973790D1A381E630050F042 /* NSBezierPath+iTerm.m in Sources */,
+				7973795A1A381E7E0050F042 /* SplitSelectionView.m in Sources */,
+				797379481A381E7E0050F042 /* ProcessCache.m in Sources */,
+				797379A51A3821F40050F042 /* UKSystemInfo.m in Sources */,
+				797378FE1A381E5E0050F042 /* PointerPrefsController.m in Sources */,
+				797379311A381E7E0050F042 /* IntervalMap.m in Sources */,
+				7973799F1A3821F40050F042 /* UKCrashReporter.m in Sources */,
+				7973794E1A381E7E0050F042 /* PTYTab.m in Sources */,
+				797379571A381E7E0050F042 /* ScreenChar.m in Sources */,
+				797378FC1A381E5E0050F042 /* TrouterPrefsController.m in Sources */,
+				797379421A381E7E0050F042 /* PasteEvent.m in Sources */,
+				7973791C1A381E710050F042 /* ToolProfiles.m in Sources */,
+				7973791E1A381E760050F042 /* Trigger.m in Sources */,
+				797379461A381E7E0050F042 /* PasteViewController.m in Sources */,
+				7973794B1A381E7E0050F042 /* PTYScrollView.m in Sources */,
+				797378F91A381E5E0050F042 /* PreferencePanel.m in Sources */,
+				797378FA1A381E5E0050F042 /* SmartSelectionController.m in Sources */,
+				797379651A381E7E0050F042 /* SolidColorView.m in Sources */,
+				7973793B1A381E7E0050F042 /* iTermKeyBindingMgr.m in Sources */,
+				797378F41A381E580050F042 /* TmuxWindowsTable.m in Sources */,
+				797379071A381E630050F042 /* NSBitmapImageRep+CoreImage.m in Sources */,
+				797378FD1A381E5E0050F042 /* WindowArrangements.m in Sources */,
+				797379661A381E7E0050F042 /* ColorsMenuItemView.m in Sources */,
+				7973790B1A381E630050F042 /* NSStringITerm.m in Sources */,
+				797378F81A381E5E0050F042 /* ArrangementPreviewView.m in Sources */,
+				797379301A381E7E0050F042 /* GlobalSearch.m in Sources */,
+				797379211A381E760050F042 /* CoprocessTrigger.m in Sources */,
+				797378EB1A381E580050F042 /* TmuxLayoutParser.m in Sources */,
+				797379591A381E7E0050F042 /* SessionView.m in Sources */,
+				797379121A381E6D0050F042 /* DVRBuffer.m in Sources */,
+				797379751A3821CC0050F042 /* PSMAdiumTabStyle.m in Sources */,
+				7973797B1A3821CC0050F042 /* PSMTabDragAssistant.m in Sources */,
+				7973791A1A381E710050F042 /* ToolNotes.m in Sources */,
+				797378EC1A381E580050F042 /* TmuxWindowOpener.m in Sources */,
+				7973797D1A3821CC0050F042 /* PSMOverflowPopUpButton.m in Sources */,
+				797379531A381E7E0050F042 /* PTYTabView.m in Sources */,
+				797379521A381E7E0050F042 /* PTYTextView.m in Sources */,
+				7973791B1A381E710050F042 /* ToolPasteHistory.m in Sources */,
+				797379511A381E7E0050F042 /* PTYTask.m in Sources */,
+				797379561A381E7E0050F042 /* RoundedRectView.m in Sources */,
+				797379131A381E6D0050F042 /* DVRDecoder.m in Sources */,
+				7973792D1A381E7E0050F042 /* FindViewController.m in Sources */,
+				797379361A381E7E0050F042 /* iTermController.m in Sources */,
+				797379021A381E5E0050F042 /* ContextMenuActionPrefsController.m in Sources */,
+				797379611A381E7E0050F042 /* TextViewWrapper.m in Sources */,
+				797379231A381E760050F042 /* GrowlTrigger.m in Sources */,
+				797379771A3821CC0050F042 /* PSMTabDragWindow.m in Sources */,
+				797379441A381E7E0050F042 /* PasteView.m in Sources */,
+				797378DF1A381E500050F042 /* ProfileListView.m in Sources */,
+				797379201A381E760050F042 /* BellTrigger.m in Sources */,
+				7973792E1A381E7E0050F042 /* FontSizeEstimator.m in Sources */,
+				797379111A381E6D0050F042 /* DVR.m in Sources */,
+				797378E21A381E500050F042 /* ProfileTableRow.m in Sources */,
+				797378F61A381E580050F042 /* TmuxControllerRegistry.m in Sources */,
+				797379041A381E630050F042 /* NSView+RecursiveDescription.m in Sources */,
+				797379501A381E7E0050F042 /* PTYSplitView.m in Sources */,
+				797378E41A381E500050F042 /* ProfileTableView.m in Sources */,
+				797379221A381E760050F042 /* BounceTrigger.m in Sources */,
+				797379321A381E7E0050F042 /* ITAddressBookMgr.m in Sources */,
+				797379271A381E7E0050F042 /* BackgroundThread.m in Sources */,
+				7973794A1A381E7E0050F042 /* PseudoTerminalRestorer.m in Sources */,
+				7973793C1A381E7E0050F042 /* iTermSearchField.m in Sources */,
+				797379141A381E6D0050F042 /* DVREncoder.m in Sources */,
+				797378E71A381E580050F042 /* EquivalenceClassSet.m in Sources */,
+				7973792B1A381E7E0050F042 /* Coprocess.m in Sources */,
+				7973797F1A3821CC0050F042 /* PSMProgressIndicator.m in Sources */,
+				7973794D1A381E7E0050F042 /* PTToolbarController.m in Sources */,
+				797378EF1A381E580050F042 /* TmuxStateParser.m in Sources */,
+				7973793A1A381E7E0050F042 /* iTermGrowlDelegate.m in Sources */,
+				797379181A381E710050F042 /* ToolWrapper.m in Sources */,
+				797378E91A381E580050F042 /* TmuxController.m in Sources */,
+				797378E11A381E500050F042 /* ProfilesWindow.m in Sources */,
+				797379191A381E710050F042 /* ToolJobs.m in Sources */,
+				797379601A381E7E0050F042 /* Trouter.m in Sources */,
+				797379351A381E7E0050F042 /* iTermApplicationDelegate.m in Sources */,
+				797378E81A381E580050F042 /* TmuxGateway.m in Sources */,
+				7973790A1A381E630050F042 /* NSImage+CoreImage.m in Sources */,
+				797379101A381E690050F042 /* Popup.m in Sources */,
+				7973798B1A3821CC0050F042 /* PSMMetalTabStyle.m in Sources */,
+				797379851A3821CC0050F042 /* PSMTabBarControl.m in Sources */,
+				797379621A381E7E0050F042 /* VT100Screen.m in Sources */,
+				797379541A381E7E0050F042 /* PTYWindow.m in Sources */,
+				7973792F1A381E7E0050F042 /* FutureMethods.m in Sources */,
+				797378E01A381E500050F042 /* ProfileModel.m in Sources */,
+				797379681A381E7E0050F042 /* PTYFontInfo.m in Sources */,
+				797379151A381E6D0050F042 /* DVRIndexEntry.m in Sources */,
+				797379791A3821CC0050F042 /* NSBezierPath_AMShading.m in Sources */,
+				797379581A381E7E0050F042 /* SessionTitleView.m in Sources */,
+				797379401A381E7E0050F042 /* PasteContext.m in Sources */,
+				797379831A3821CC0050F042 /* PSMTabBarCell.m in Sources */,
+				797379491A381E7E0050F042 /* PseudoTerminal.m in Sources */,
+				797379001A381E5E0050F042 /* EventMonitorView.m in Sources */,
+				797379331A381E7E0050F042 /* ITViewLocalizer.m in Sources */,
+				7973790E1A381E690050F042 /* Autocomplete.m in Sources */,
+				797379A31A3821F40050F042 /* UKNibOwner.m in Sources */,
+				797379081A381E630050F042 /* NSDateFormatterExtras.m in Sources */,
+				797379251A381E760050F042 /* SendTextTrigger.m in Sources */,
+				7973795B1A381E7E0050F042 /* SplitPanel.m in Sources */,
+				7973791D1A381E760050F042 /* HighlightTrigger.m in Sources */,
+				797379391A381E7E0050F042 /* iTermFontPanel.m in Sources */,
+				797379631A381E7E0050F042 /* VT100Terminal.m in Sources */,
+				797379161A381E6D0050F042 /* FakeWindow.m in Sources */,
+				797379731A3821C30050F042 /* RegexKitLite.m in Sources */,
+				7973794C1A381E7E0050F042 /* PTYSession.m in Sources */,
+				7973795D1A381E7E0050F042 /* ThreeFingerTapGestureRecognizer.m in Sources */,
+				797378F71A381E580050F042 /* TmuxSessionsTable.m in Sources */,
+				7973793D1A381E7E0050F042 /* LineBuffer.m in Sources */,
+				7973795F1A381E7E0050F042 /* ToastWindowController.m in Sources */,
+				7973790F1A381E690050F042 /* PasteboardHistory.m in Sources */,
+				797379171A381E710050F042 /* ToolbeltView.m in Sources */,
+				797379871A3821CC0050F042 /* PSMUnifiedTabStyle.m in Sources */,
+				7973791F1A381E760050F042 /* AlertTrigger.m in Sources */,
+				797378F11A381E580050F042 /* TmuxDashboardController.m in Sources */,
+				797378E51A381E530050F042 /* GTMCarbonEvent.m in Sources */,
+				7973792A1A381E7E0050F042 /* CharacterRun.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8742064E0564169600CFC3F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2247,7 +3143,7 @@
 				GCC_WARN_PROTOTYPE_CONVERSION = NO;
 				GCC_WARN_SIGN_COMPARE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 ppc x86_64";
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -2304,6 +3200,406 @@
 				ZERO_LINK = NO;
 			};
 			name = "Leopard Deployment";
+		};
+		797378601A381D910050F042 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				INFOPLIST_FILE = "iTerm-Embedded/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework\"",
+					Growl.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-laprutil-1",
+					"-licucore",
+				);
+				PRODUCT_NAME = iTermEmbedded;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = i386;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Development;
+		};
+		797378611A381D910050F042 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				INFOPLIST_FILE = "iTerm-Embedded/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework\"",
+					Growl.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-laprutil-1",
+					"-licucore",
+				);
+				PRODUCT_NAME = iTermEmbedded;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = i386;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Deployment;
+		};
+		797378621A381D910050F042 /* Leopard Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				INFOPLIST_FILE = "iTerm-Embedded/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework\"",
+					Growl.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-laprutil-1",
+					"-licucore",
+				);
+				PRODUCT_NAME = iTermEmbedded;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = i386;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Leopard Deployment";
+		};
+		797378631A381D910050F042 /* Nightly */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				INFOPLIST_FILE = "iTerm-Embedded/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework\"",
+					Growl.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-laprutil-1",
+					"-licucore",
+				);
+				PRODUCT_NAME = iTermEmbedded;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = i386;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Nightly;
+		};
+		797378641A381D910050F042 /* LegacyDeployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				INFOPLIST_FILE = "iTerm-Embedded/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework\"",
+					Growl.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-laprutil-1",
+					"-licucore",
+				);
+				PRODUCT_NAME = iTermEmbedded;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = i386;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = LegacyDeployment;
+		};
+		797378651A381D910050F042 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = .;
+				INFOPLIST_FILE = "iTerm-Embedded/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework\"",
+					Growl.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-laprutil-1",
+					"-licucore",
+				);
+				PRODUCT_NAME = iTermEmbedded;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = i386;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Default;
 		};
 		BB024D36096EE4080021E793 /* Development */ = {
 			isa = XCBuildConfiguration;
@@ -2512,6 +3808,18 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7973786C1A381D910050F042 /* Build configuration list for PBXNativeTarget "iTerm-Embedded" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				797378601A381D910050F042 /* Development */,
+				797378611A381D910050F042 /* Deployment */,
+				797378621A381D910050F042 /* Leopard Deployment */,
+				797378631A381D910050F042 /* Nightly */,
+				797378641A381D910050F042 /* LegacyDeployment */,
+				797378651A381D910050F042 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BB024D35096EE4080021E793 /* Build configuration list for PBXNativeTarget "iTerm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
