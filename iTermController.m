@@ -54,7 +54,6 @@
 #import "iTermKeyBindingMgr.h"
 #import <Carbon/Carbon.h>
 #import <ScriptingBridge/ScriptingBridge.h>
-#import <iTermGrowlDelegate.h>
 #include <objc/runtime.h>
 
 //#define HOTKEY_WINDOW_VERBOSE_LOGGING
@@ -230,7 +229,7 @@ static BOOL initDone = NO;
          * Need to add routine in iTerm prefs for Growl support and
          * PLIST check here.
          */
-        gd = [iTermGrowlDelegate sharedInstance];
+//        gd = [iTermGrowlDelegate sharedInstance];
     }
 
     return (self);

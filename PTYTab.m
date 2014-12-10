@@ -33,7 +33,6 @@
 #import "SessionView.h"
 #import "FakeWindow.h"
 #import "PreferencePanel.h"
-#import "iTermGrowlDelegate.h"
 #import "PTYScrollView.h"
 #import "PSMTabBarControl.h"
 #import "PSMTabStyle.h"
@@ -3791,18 +3790,18 @@ static void SetAgainstGrainDim(BOOL isVertical, NSSize* dest, CGFloat value)
                 [[session SCREEN] growl] &&
                 [[NSDate date] timeIntervalSinceDate:[SessionView lastResizeDate]] > POST_WINDOW_RESIZE_SILENCE_SEC &&
                 now.tv_sec > [session lastOutput].tv_sec + 1) {
-                [[iTermGrowlDelegate sharedInstance] growlNotify:NSLocalizedStringFromTableInBundle(@"Idle",
-                                                                                                    @"iTerm",
-                                                                                                    [NSBundle bundleForClass:[self class]],
-                                                                                                    @"Growl Alerts")
-                                                 withDescription:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Session %@ in tab #%d became idle.",
-                                                                                                                               @"iTerm",
-                                                                                                                               [NSBundle bundleForClass:[self class]],
-                                                                                                                               @"Growl Alerts"),
-                                                                  [[self activeSession] name],
-                                                                  [self realObjectCount]]
-                                                 andNotification:@"Idle"
-                                                      andSession:session];
+//                [[iTermGrowlDelegate sharedInstance] growlNotify:NSLocalizedStringFromTableInBundle(@"Idle",
+//                                                                                                    @"iTerm",
+//                                                                                                    [NSBundle bundleForClass:[self class]],
+//                                                                                                    @"Growl Alerts")
+//                                                 withDescription:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Session %@ in tab #%d became idle.",
+//                                                                                                                               @"iTerm",
+//                                                                                                                               [NSBundle bundleForClass:[self class]],
+//                                                                                                                               @"Growl Alerts"),
+//                                                                  [[self activeSession] name],
+//                                                                  [self realObjectCount]]
+//                                                 andNotification:@"Idle"
+//                                                      andSession:session];
                 [session setGrowlIdle:YES];
                 [session setGrowlNewOutput:NO];
             }
@@ -3827,15 +3826,15 @@ static void SetAgainstGrainDim(BOOL isVertical, NSSize* dest, CGFloat value)
         [[self realParentWindow] broadcastMode] == BROADCAST_OFF &&
         [[[self activeSession] SCREEN] growl] &&
         [[NSDate date] timeIntervalSinceDate:[SessionView lastResizeDate]] > POST_WINDOW_RESIZE_SILENCE_SEC) {
-        [[iTermGrowlDelegate sharedInstance] growlNotify:NSLocalizedStringFromTableInBundle(@"New Output",
-                                                                                            @"iTerm",
-                                                                                            [NSBundle bundleForClass:[self class]],
-                                                                                            @"Growl Alerts")
-                                         withDescription:[NSString stringWithFormat:@"New output was received in %@, tab #%d.",
-                                                          [[self activeSession] name],
-                                                          [self realObjectCount]]
-                                         andNotification:@"New Output"
-                                              andSession:[self activeSession]];
+//        [[iTermGrowlDelegate sharedInstance] growlNotify:NSLocalizedStringFromTableInBundle(@"New Output",
+//                                                                                            @"iTerm",
+//                                                                                            [NSBundle bundleForClass:[self class]],
+//                                                                                            @"Growl Alerts")
+//                                         withDescription:[NSString stringWithFormat:@"New output was received in %@, tab #%d.",
+//                                                          [[self activeSession] name],
+//                                                          [self realObjectCount]]
+//                                         andNotification:@"New Output"
+//                                              andSession:[self activeSession]];
         [[self activeSession] setGrowlNewOutput:YES];
     }
 

@@ -8,7 +8,6 @@
 #import "TriggerController.h"
 #import "ProfileModel.h"
 #import "ITAddressBookMgr.h"
-#import "GrowlTrigger.h"
 #import "BounceTrigger.h"
 #import "BellTrigger.h"
 #import "ScriptTrigger.h"
@@ -34,7 +33,6 @@ static NSMutableArray *gTriggerClasses;
     [gTriggerClasses addObject:[[[AlertTrigger alloc] init] autorelease]];
     [gTriggerClasses addObject:[[[BellTrigger alloc] init] autorelease]];
     [gTriggerClasses addObject:[[[BounceTrigger alloc] init] autorelease]];
-    [gTriggerClasses addObject:[[[GrowlTrigger alloc] init] autorelease]];
     [gTriggerClasses addObject:[[[SendTextTrigger alloc] init] autorelease]];
     [gTriggerClasses addObject:[[[ScriptTrigger alloc] init] autorelease]];
     [gTriggerClasses addObject:[[[CoprocessTrigger alloc] init] autorelease]];

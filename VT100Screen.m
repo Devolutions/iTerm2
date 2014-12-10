@@ -45,7 +45,6 @@
 #import "PTYTask.h"
 #import "PreferencePanel.h"
 #import "iTermApplicationDelegate.h"
-#import "iTermGrowlDelegate.h"
 #import "ITAddressBookMgr.h"
 #include <string.h>
 #include <unistd.h>
@@ -337,7 +336,7 @@ static __inline__ screen_char_t *incrementLinePointer(screen_char_t *buf_start, 
     }
 
     // Need Growl plist stuff
-    gd = [iTermGrowlDelegate sharedInstance];
+//    gd = [iTermGrowlDelegate sharedInstance];
 
     dvr = [DVR alloc];
     [dvr initWithBufferCapacity:[[PreferencePanel sharedInstance] irMemory] * 1024 * 1024];
@@ -2554,20 +2553,20 @@ static BOOL XYIsBeforeXY(int px1, int py1, int px2, int py2) {
         break;
     }
     // Our iTerm specific codes
-    case ITERM_GROWL:
-        if (GROWL) {
-            [gd growlNotify:NSLocalizedStringFromTableInBundle(@"Alert",
-                                                               @"iTerm",
-                                                               [NSBundle bundleForClass:[self class]],
-                                                               @"Growl Alerts")
-            withDescription:[NSString stringWithFormat:@"Session %@ #%d: %@",
-                             [SESSION name],
-                             [[SESSION tab] realObjectCount],
-                             token.u.string]
-            andNotification:@"Customized Message"
-                 andSession:SESSION];
-        }
-        break;
+//    case ITERM_GROWL:
+//        if (GROWL) {
+//            [gd growlNotify:NSLocalizedStringFromTableInBundle(@"Alert",
+//                                                               @"iTerm",
+//                                                               [NSBundle bundleForClass:[self class]],
+//                                                               @"Growl Alerts")
+//            withDescription:[NSString stringWithFormat:@"Session %@ #%d: %@",
+//                             [SESSION name],
+//                             [[SESSION tab] realObjectCount],
+//                             token.u.string]
+//            andNotification:@"Customized Message"
+//                 andSession:SESSION];
+//        }
+//        break;
 
     case DCS_TMUX:
         [SESSION startTmuxMode];

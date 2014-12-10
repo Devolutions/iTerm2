@@ -39,7 +39,6 @@
 #import "NSStringITerm.h"
 #import "iTermKeyBindingMgr.h"
 #import "ITAddressBookMgr.h"
-#import "iTermGrowlDelegate.h"
 #import "iTermApplicationDelegate.h"
 #import "SessionView.h"
 #import "PTYTab.h"
@@ -121,7 +120,7 @@ static NSString *kTmuxFontChanged = @"kTmuxFontChanged";
     NSParameterAssert(SHELL != nil && TERMINAL != nil && SCREEN != nil);
 
     // Need Growl plist stuff
-    gd = [iTermGrowlDelegate sharedInstance];
+//    gd = [iTermGrowlDelegate sharedInstance];
     growlIdle = growlNewOutput = NO;
 
     slowPasteBuffer = [[NSMutableString alloc] init];
@@ -1079,12 +1078,12 @@ static NSString *kTmuxFontChanged = @"kTmuxFontChanged";
 - (void)brokenPipe
 {
     if ([SCREEN growl] && (![[self tab] isForegroundTab] || [self _growlOnForegroundTabs])) {
-        [gd growlNotify:@"Session Ended"
-            withDescription:[NSString stringWithFormat:@"Session \"%@\" in tab #%d just terminated.",
-                             [self name],
-                             [[self tab] realObjectCount]]
-            andNotification:@"Broken Pipes"
-                 andSession:nil];
+//        [gd growlNotify:@"Session Ended"
+//            withDescription:[NSString stringWithFormat:@"Session \"%@\" in tab #%d just terminated.",
+//                             [self name],
+//                             [[self tab] realObjectCount]]
+//            andNotification:@"Broken Pipes"
+//                 andSession:nil];
     }
 
     EXIT = YES;
@@ -2234,18 +2233,18 @@ static NSString *kTmuxFontChanged = @"kTmuxFontChanged";
             if ([TEXTVIEW keyIsARepeat] == NO &&
                 ![[TEXTVIEW window] isKeyWindow] &&
                 [SCREEN growl]) {
-                [gd growlNotify:NSLocalizedStringFromTableInBundle(@"Bell",
-                                                                   @"iTerm",
-                                                                   [NSBundle bundleForClass:[self class]],
-                                                                   @"Growl Alerts")
-                withDescription:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Session %@ #%d just rang a bell!",
-                                                                                              @"iTerm",
-                                                                                              [NSBundle bundleForClass:[self class]],
-                                                                                              @"Growl Alerts"),
-                                 [self name],
-                                 [[self tab] realObjectCount]]
-                andNotification:@"Bells"
-                     andSession:self];
+//                [gd growlNotify:NSLocalizedStringFromTableInBundle(@"Bell",
+//                                                                   @"iTerm",
+//                                                                   [NSBundle bundleForClass:[self class]],
+//                                                                   @"Growl Alerts")
+//                withDescription:[NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"Session %@ #%d just rang a bell!",
+//                                                                                              @"iTerm",
+//                                                                                              [NSBundle bundleForClass:[self class]],
+//                                                                                              @"Growl Alerts"),
+//                                 [self name],
+//                                 [[self tab] realObjectCount]]
+//                andNotification:@"Bells"
+//                     andSession:self];
             }
         }
     }
@@ -3213,10 +3212,10 @@ static NSString *kTmuxFontChanged = @"kTmuxFontChanged";
     return originalAddressBookEntry;
 }
 
-- (iTermGrowlDelegate*)growlDelegate
-{
-    return gd;
-}
+//- (iTermGrowlDelegate*)growlDelegate
+//{
+//    return gd;
+//}
 
 - (BOOL)isPasting {
     return slowPasteTimer != nil;
