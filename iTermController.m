@@ -44,7 +44,6 @@
 #import "PseudoTerminal.h"
 #import "PseudoTerminal.h"
 #import "SBSystemPreferences.h"
-#import "UKCrashReporter/UKCrashReporter.h"
 #import "VT100Screen.h"
 #import "WindowArrangements.h"
 #import "iTerm.h"
@@ -200,7 +199,7 @@ static BOOL initDone = NO;
     self = [super init];
 
     if (self) {
-        UKCrashReporterCheckForCrash();
+//        UKCrashReporterCheckForCrash();
 
         runningApplicationClass_ = NSClassFromString(@"NSRunningApplication"); // 10.6
         // create the iTerm directory if it does not exist

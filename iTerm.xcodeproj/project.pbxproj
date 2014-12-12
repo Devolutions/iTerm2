@@ -467,7 +467,6 @@
 		797378BD1A381E410050F042 /* GTMTypeCasting.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D624BF51386E3B400111319 /* GTMTypeCasting.h */; };
 		797378BE1A381E410050F042 /* iTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6A04E42E320073D10E /* iTerm.h */; };
 		797378BF1A381E410050F042 /* iTermApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF0FD63062916F70080EF74 /* iTermApplication.h */; };
-		797378C01A381E410050F042 /* iTermApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D5CC6304E7AA0500000106 /* iTermApplicationDelegate.h */; };
 		797378C11A381E410050F042 /* iTermController.h in Headers */ = {isa = PBXBuildFile; fileRef = 872EBC6204E42E320073D10E /* iTermController.h */; };
 		797378C21A381E410050F042 /* iTermExpose.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DDBC61C12E2BCDC00BC3868 /* iTermExpose.h */; };
 		797378C41A381E410050F042 /* iTermKeyBindingMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = DDDB7AD605D773B400E197C2 /* iTermKeyBindingMgr.h */; };
@@ -582,7 +581,6 @@
 		797379321A381E7E0050F042 /* ITAddressBookMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E74F4904E9089700000106 /* ITAddressBookMgr.m */; };
 		797379331A381E7E0050F042 /* ITViewLocalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B8892B04E9342100000106 /* ITViewLocalizer.m */; };
 		797379341A381E7E0050F042 /* iTermApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0FD64062916F70080EF74 /* iTermApplication.m */; };
-		797379351A381E7E0050F042 /* iTermApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D5CC6404E7AA0500000106 /* iTermApplicationDelegate.m */; };
 		797379361A381E7E0050F042 /* iTermController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A66F030272453F03A80106 /* iTermController.m */; };
 		797379371A381E7E0050F042 /* iTermExpose.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBC61D12E2BCDC00BC3868 /* iTermExpose.m */; };
 		797379381A381E7E0050F042 /* iTermFontPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2F3B3B1516BA460044C337 /* iTermFontPanel.h */; };
@@ -682,16 +680,7 @@
 		7973799B1A3821D50050F042 /* CGSWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F700E748404000EC682 /* CGSWindow.h */; };
 		7973799C1A3821D50050F042 /* CGSWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = F6441F710E748404000EC682 /* CGSWorkspace.h */; };
 		7973799D1A3821D50050F042 /* Compatability.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A6E4081211CC6000D9AD6F /* Compatability.h */; };
-		7973799E1A3821F40050F042 /* UKCrashReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94EAA512D64022008225A9 /* UKCrashReporter.h */; };
-		7973799F1A3821F40050F042 /* UKCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D94EAA612D64022008225A9 /* UKCrashReporter.m */; };
-		797379A01A3821F40050F042 /* UKCrashReporter.nib in Resources */ = {isa = PBXBuildFile; fileRef = 1D94EAA712D64022008225A9 /* UKCrashReporter.nib */; };
-		797379A11A3821F40050F042 /* UKCrashReporter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D94EAA812D64022008225A9 /* UKCrashReporter.strings */; };
-		797379A21A3821F40050F042 /* UKNibOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94EAA912D64022008225A9 /* UKNibOwner.h */; };
-		797379A31A3821F40050F042 /* UKNibOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D94EAAA12D64022008225A9 /* UKNibOwner.m */; };
-		797379A41A3821F40050F042 /* UKSystemInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94EAAB12D64022008225A9 /* UKSystemInfo.h */; };
-		797379A51A3821F40050F042 /* UKSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D94EAAC12D64022008225A9 /* UKSystemInfo.m */; };
 		797379A61A3824020050F042 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 93A6FEF910685E9900A5F905 /* dsa_pub.pem */; };
-		797379A71A38243B0050F042 /* UKCrashReporter Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D94EAA412D64022008225A9 /* UKCrashReporter Readme.txt */; };
 		797379A81A38245F0050F042 /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB151F2903648AC401F955DB /* iTerm.strings */; };
 		797379A91A3824620050F042 /* iTerm.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = DD48F1CC03EBB20500A8A065 /* iTerm.scriptTerminology */; };
 		797379AA1A3824650050F042 /* iTerm.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = DD48F1C703EBB1C400A8A065 /* iTerm.scriptSuite */; };
@@ -784,6 +773,14 @@
 		79737A011A3824F40050F042 /* DefaultPointerActions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D8255F8146869D8007CAE78 /* DefaultPointerActions.plist */; };
 		79737A061A3826260050F042 /* TestViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79737A031A3826260050F042 /* TestViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79737A071A3826260050F042 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79737A041A3826260050F042 /* TestViewController.m */; };
+		79ABB1B61A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB1B41A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m */; };
+		79ABB1B71A3ACCA100A8BBF2 /* iTermApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D5CC6304E7AA0500000106 /* iTermApplicationDelegate.h */; };
+		79ABB1BE1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 79ABB1BC1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h */; };
+		79ABB1BF1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 79ABB1BC1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h */; };
+		79ABB1C01A3ACFED00A8BBF2 /* iTermApplication_Redirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB1BD1A3ACFED00A8BBF2 /* iTermApplication_Redirection.m */; };
+		79ABB1C11A3ACFED00A8BBF2 /* iTermApplication_Redirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB1BD1A3ACFED00A8BBF2 /* iTermApplication_Redirection.m */; };
+		79ABB1C31A3AD1CD00A8BBF2 /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = 79ABB1C21A3AD1CD00A8BBF2 /* PrefixHeader.pch */; };
+		79ABB1C41A3AD1CD00A8BBF2 /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = 79ABB1C21A3AD1CD00A8BBF2 /* PrefixHeader.pch */; };
 		874206490564169600CFC3F1 /* iTermApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D5CC6304E7AA0500000106 /* iTermApplicationDelegate.h */; };
 		8742064D0564169600CFC3F1 /* iTerm.icns in Resources */ = {isa = PBXBuildFile; fileRef = E8EDCE69015E0A5703000001 /* iTerm.icns */; };
 		8742064F0564169600CFC3F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CF757F026DDAD703A80106 /* main.m */; };
@@ -1114,7 +1111,7 @@
 		20B8892A04E9342100000106 /* ITViewLocalizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITViewLocalizer.h; sourceTree = "<group>"; };
 		20B8892B04E9342100000106 /* ITViewLocalizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITViewLocalizer.m; sourceTree = "<group>"; };
 		20D5CC6304E7AA0500000106 /* iTermApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTermApplicationDelegate.h; sourceTree = "<group>"; };
-		20D5CC6404E7AA0500000106 /* iTermApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = iTermApplicationDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		20D5CC6404E7AA0500000106 /* iTermApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = iTermApplicationDelegate.m; sourceTree = "<group>"; };
 		20E74F4804E9089700000106 /* ITAddressBookMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAddressBookMgr.h; sourceTree = "<group>"; };
 		20E74F4904E9089700000106 /* ITAddressBookMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITAddressBookMgr.m; sourceTree = "<group>"; };
 		49A6E4081211CC6000D9AD6F /* Compatability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compatability.h; sourceTree = "<group>"; };
@@ -1126,6 +1123,10 @@
 		797378501A381D8F0050F042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79737A031A3826260050F042 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		79737A041A3826260050F042 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		79ABB1B41A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTermApplicationDelegate_Mock.m; sourceTree = "<group>"; };
+		79ABB1BC1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTermApplication_Redirection.h; sourceTree = "<group>"; };
+		79ABB1BD1A3ACFED00A8BBF2 /* iTermApplication_Redirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTermApplication_Redirection.m; sourceTree = "<group>"; };
+		79ABB1C21A3AD1CD00A8BBF2 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		872EBC5304E42E320073D10E /* NSStringITerm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSStringITerm.h; path = Headers/iTerm/NSStringITerm.h; sourceTree = "<group>"; };
 		872EBC5404E42E320073D10E /* PTYTextView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PTYTextView.h; path = Headers/iTerm/PTYTextView.h; sourceTree = "<group>"; };
 		872EBC5704E42E320073D10E /* PTYTabView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PTYTabView.h; path = Headers/iTerm/PTYTabView.h; sourceTree = "<group>"; };
@@ -1576,6 +1577,7 @@
 			isa = PBXGroup;
 			children = (
 				93A6FEF910685E9900A5F905 /* dsa_pub.pem */,
+				79ABB1C21A3AD1CD00A8BBF2 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1835,6 +1837,9 @@
 			children = (
 				79737A031A3826260050F042 /* TestViewController.h */,
 				79737A041A3826260050F042 /* TestViewController.m */,
+				79ABB1B41A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m */,
+				79ABB1BC1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h */,
+				79ABB1BD1A3ACFED00A8BBF2 /* iTermApplication_Redirection.m */,
 			);
 			name = Devolutions;
 			sourceTree = "<group>";
@@ -2006,7 +2011,6 @@
 				797378AB1A381E400050F042 /* ProfileListView.h in Headers */,
 				797378731A381E400050F042 /* charmaps.h in Headers */,
 				797378D51A381E410050F042 /* PTYTextView.h in Headers */,
-				797379A21A3821F40050F042 /* UKNibOwner.h in Headers */,
 				797378D01A381E410050F042 /* PTYScrollView.h in Headers */,
 				797379011A381E5E0050F042 /* ContextMenuActionPrefsController.h in Headers */,
 				797378BD1A381E410050F042 /* GTMTypeCasting.h in Headers */,
@@ -2018,6 +2022,7 @@
 				7973798D1A3821D50050F042 /* CarbonHelpers.h in Headers */,
 				797379951A3821D50050F042 /* CGSInternal.h in Headers */,
 				7973787E1A381E400050F042 /* PTYTextView.h in Headers */,
+				79ABB1C41A3AD1CD00A8BBF2 /* PrefixHeader.pch in Headers */,
 				7973789B1A381E400050F042 /* GrowlTrigger.h in Headers */,
 				797378BE1A381E410050F042 /* iTerm.h in Headers */,
 				797378AC1A381E400050F042 /* ProfilesWindow.h in Headers */,
@@ -2032,6 +2037,7 @@
 				797378721A381E400050F042 /* BookmarksController.h in Headers */,
 				797378F01A381E580050F042 /* TmuxDashboardController.h in Headers */,
 				797379761A3821CC0050F042 /* PSMTabDragWindow.h in Headers */,
+				79ABB1BF1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h in Headers */,
 				797378A41A381E400050F042 /* ToolProfiles.h in Headers */,
 				797379801A3821CC0050F042 /* PSMRolloverButton.h in Headers */,
 				797378BC1A381E410050F042 /* GTMObjectSingleton.h in Headers */,
@@ -2048,7 +2054,6 @@
 				797379031A381E630050F042 /* NSView+RecursiveDescription.h in Headers */,
 				797379281A381E7E0050F042 /* CharacterRun.h in Headers */,
 				797378A61A381E400050F042 /* ToolbeltView.h in Headers */,
-				797379A41A3821F40050F042 /* UKSystemInfo.h in Headers */,
 				7973789A1A381E400050F042 /* BounceTrigger.h in Headers */,
 				7973787B1A381E400050F042 /* PTYSession.h in Headers */,
 				797378811A381E400050F042 /* VT100Terminal.h in Headers */,
@@ -2058,8 +2063,8 @@
 				797378891A381E400050F042 /* HighlightTrigger.h in Headers */,
 				797378CD1A381E410050F042 /* PreferencePanel.h in Headers */,
 				797378A91A381E400050F042 /* SplitPanel.h in Headers */,
+				79ABB1B71A3ACCA100A8BBF2 /* iTermApplicationDelegate.h in Headers */,
 				797378DE1A381E4B0050F042 /* SBSystemPreferences.h in Headers */,
-				797378C01A381E410050F042 /* iTermApplicationDelegate.h in Headers */,
 				797378CC1A381E410050F042 /* Popup.h in Headers */,
 				797379981A3821D50050F042 /* CGSRegion.h in Headers */,
 				797378B71A381E400050F042 /* FindViewController.h in Headers */,
@@ -2083,7 +2088,6 @@
 				797378AD1A381E400050F042 /* charmaps.h in Headers */,
 				797378921A381E400050F042 /* Autocomplete.h in Headers */,
 				797379781A3821CC0050F042 /* NSBezierPath_AMShading.h in Headers */,
-				7973799E1A3821F40050F042 /* UKCrashReporter.h in Headers */,
 				79737A061A3826260050F042 /* TestViewController.h in Headers */,
 				797378841A381E400050F042 /* TmuxController.h in Headers */,
 				7973798C1A3821CC0050F042 /* PSMTabStyle.h in Headers */,
@@ -2205,6 +2209,7 @@
 				1D2E802E129DA45A00F3D71E /* PTYTab.h in Headers */,
 				1D2E813112A18F7500F3D71E /* SessionView.h in Headers */,
 				1D36155512CBF33E00803EA9 /* ScreenChar.h in Headers */,
+				79ABB1BE1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h in Headers */,
 				1D94EAAE12D64022008225A9 /* UKCrashReporter.h in Headers */,
 				1D94EAB212D64022008225A9 /* UKNibOwner.h in Headers */,
 				1D94EAB412D64022008225A9 /* UKSystemInfo.h in Headers */,
@@ -2277,6 +2282,7 @@
 				1D407A3614BABE8700BD5035 /* charmaps.h in Headers */,
 				1D407A3814BABE8700BD5035 /* iTerm.h in Headers */,
 				1D407A3914BABE8700BD5035 /* iTermController.h in Headers */,
+				79ABB1C31A3AD1CD00A8BBF2 /* PrefixHeader.pch in Headers */,
 				1D407A3A14BABE8700BD5035 /* iTermKeyBindingMgr.h in Headers */,
 				1D407A3B14BABE8700BD5035 /* NSStringITerm.h in Headers */,
 				1D407A3C14BABE8700BD5035 /* PreferencePanel.h in Headers */,
@@ -2440,7 +2446,6 @@
 				797379F51A3824E30050F042 /* wrap_to_bottom.png in Resources */,
 				797379E51A3824DC0050F042 /* PrefsMouse@2x.png in Resources */,
 				797379F91A3824EA0050F042 /* EncodingsWithLowerCase.plist in Resources */,
-				797379A01A3821F40050F042 /* UKCrashReporter.nib in Resources */,
 				797379DD1A3824D20050F042 /* OnlineHelp in Resources */,
 				797379F21A3824E30050F042 /* BroadcastInput.png in Resources */,
 				797379EC1A3824DC0050F042 /* IBarCursor@2x.png in Resources */,
@@ -2457,7 +2462,6 @@
 				797379CA1A3824C00050F042 /* TabClose_Front_Rollover@2x.png in Resources */,
 				797379C11A3824A90050F042 /* GlobalSearch.xib in Resources */,
 				797379C21A3824C00050F042 /* TabClose_Front_Pressed.png in Resources */,
-				797379A71A38243B0050F042 /* UKCrashReporter Readme.txt in Resources */,
 				797379C01A3824A50050F042 /* Autocomplete.xib in Resources */,
 				797379D81A3824C00050F042 /* pi.png in Resources */,
 				797379C41A3824C00050F042 /* AquaTabClose_Front_Rollover.png in Resources */,
@@ -2475,7 +2479,6 @@
 				797379FA1A3824EA0050F042 /* ColorPresets.plist in Resources */,
 				797379F01A3824E30050F042 /* IBarCursorXMR.png in Resources */,
 				797379CF1A3824C00050F042 /* AquaTabNewRollover.png in Resources */,
-				797379A11A3821F40050F042 /* UKCrashReporter.strings in Resources */,
 				797379FE1A3824ED0050F042 /* PrefsGeneral@2x.png in Resources */,
 				797379D31A3824C00050F042 /* AquaTabsDownNonKey.png in Resources */,
 				797379D91A3824C00050F042 /* TabNewMetal.png in Resources */,
@@ -2647,10 +2650,8 @@
 				7973790D1A381E630050F042 /* NSBezierPath+iTerm.m in Sources */,
 				7973795A1A381E7E0050F042 /* SplitSelectionView.m in Sources */,
 				797379481A381E7E0050F042 /* ProcessCache.m in Sources */,
-				797379A51A3821F40050F042 /* UKSystemInfo.m in Sources */,
 				797378FE1A381E5E0050F042 /* PointerPrefsController.m in Sources */,
 				797379311A381E7E0050F042 /* IntervalMap.m in Sources */,
-				7973799F1A3821F40050F042 /* UKCrashReporter.m in Sources */,
 				7973794E1A381E7E0050F042 /* PTYTab.m in Sources */,
 				797379571A381E7E0050F042 /* ScreenChar.m in Sources */,
 				797378FC1A381E5E0050F042 /* TrouterPrefsController.m in Sources */,
@@ -2698,9 +2699,11 @@
 				797378E21A381E500050F042 /* ProfileTableRow.m in Sources */,
 				797378F61A381E580050F042 /* TmuxControllerRegistry.m in Sources */,
 				797379041A381E630050F042 /* NSView+RecursiveDescription.m in Sources */,
+				79ABB1C11A3ACFED00A8BBF2 /* iTermApplication_Redirection.m in Sources */,
 				797379501A381E7E0050F042 /* PTYSplitView.m in Sources */,
 				797378E41A381E500050F042 /* ProfileTableView.m in Sources */,
 				797379221A381E760050F042 /* BounceTrigger.m in Sources */,
+				79ABB1B61A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m in Sources */,
 				797379321A381E7E0050F042 /* ITAddressBookMgr.m in Sources */,
 				797379271A381E7E0050F042 /* BackgroundThread.m in Sources */,
 				7973794A1A381E7E0050F042 /* PseudoTerminalRestorer.m in Sources */,
@@ -2716,7 +2719,6 @@
 				797378E11A381E500050F042 /* ProfilesWindow.m in Sources */,
 				797379191A381E710050F042 /* ToolJobs.m in Sources */,
 				797379601A381E7E0050F042 /* Trouter.m in Sources */,
-				797379351A381E7E0050F042 /* iTermApplicationDelegate.m in Sources */,
 				797378E81A381E580050F042 /* TmuxGateway.m in Sources */,
 				7973790A1A381E630050F042 /* NSImage+CoreImage.m in Sources */,
 				797379101A381E690050F042 /* Popup.m in Sources */,
@@ -2736,7 +2738,6 @@
 				797379001A381E5E0050F042 /* EventMonitorView.m in Sources */,
 				797379331A381E7E0050F042 /* ITViewLocalizer.m in Sources */,
 				7973790E1A381E690050F042 /* Autocomplete.m in Sources */,
-				797379A31A3821F40050F042 /* UKNibOwner.m in Sources */,
 				797379081A381E630050F042 /* NSDateFormatterExtras.m in Sources */,
 				797379251A381E760050F042 /* SendTextTrigger.m in Sources */,
 				7973795B1A381E7E0050F042 /* SplitPanel.m in Sources */,
@@ -2812,6 +2813,7 @@
 				1D44218D1290B34500891504 /* TextViewWrapper.m in Sources */,
 				1D2E802F129DA45A00F3D71E /* PTYTab.m in Sources */,
 				1D2E813212A18F7500F3D71E /* SessionView.m in Sources */,
+				79ABB1C01A3ACFED00A8BBF2 /* iTermApplication_Redirection.m in Sources */,
 				1D36155612CBF33E00803EA9 /* ScreenChar.m in Sources */,
 				1D94EAAF12D64022008225A9 /* UKCrashReporter.m in Sources */,
 				1D94EAB312D64022008225A9 /* UKNibOwner.m in Sources */,
@@ -3028,6 +3030,7 @@
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
@@ -3091,6 +3094,7 @@
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
@@ -3162,6 +3166,7 @@
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = BLOCKS_NOT_AVAILABLE;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -3232,6 +3237,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -3305,6 +3311,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3371,6 +3378,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3438,6 +3446,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3504,6 +3513,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3571,6 +3581,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3617,6 +3628,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
@@ -3665,6 +3677,7 @@
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
@@ -3715,6 +3728,7 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G4;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;

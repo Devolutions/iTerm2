@@ -991,7 +991,7 @@ NSString *sessionsKey = @"sessions";
 
 - (IBAction)closeCurrentSession:(id)sender
 {
-    iTermApplicationDelegate *appDelegate = (iTermApplicationDelegate *)[[NSApplication sharedApplication] delegate];
+    iTermApplicationDelegate *appDelegate = (iTermApplicationDelegate *)[[iTermApplication_Redirection sharedApplication] delegate];
     [appDelegate userDidInteractWithASession];
     if ([[self window] isKeyWindow]) {
         PTYSession *aSession = [[[TABVIEW selectedTabViewItem] identifier] activeSession];
@@ -1638,7 +1638,7 @@ NSString *sessionsKey = @"sessions";
 - (BOOL)windowShouldClose:(NSNotification *)aNotification
 {
     // This counts as an interaction beacuse it is only called when the user initiates the closing of the window (as opposed to a session dying on you).
-    iTermApplicationDelegate *appDelegate = (iTermApplicationDelegate *)[[NSApplication sharedApplication] delegate];
+    iTermApplicationDelegate *appDelegate = (iTermApplicationDelegate *)[[iTermApplication_Redirection sharedApplication] delegate];
     [appDelegate userDidInteractWithASession];
 
     BOOL needPrompt = NO;

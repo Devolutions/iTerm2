@@ -86,7 +86,10 @@ static NSDate* lastResizeDate_;
     self = [super initWithFrame:frame];
     if (self) {
         [self _initCommon];
-        findView_ = [[FindViewController alloc] initWithNibName:@"FindView" bundle:nil];
+        
+        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+        findView_ = [[FindViewController alloc] initWithNibName:@"FindView" bundle:bundle];
+        
         [[findView_ view] setHidden:YES];
         [self addSubview:[findView_ view]];
         NSRect aRect = [self frame];

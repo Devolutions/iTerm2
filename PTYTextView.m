@@ -2371,7 +2371,7 @@ NSMutableArray* screens=0;
 {
     static BOOL isFirstInteraction = YES;
     if (isFirstInteraction) {
-        iTermApplicationDelegate *appDelegate = (iTermApplicationDelegate *)[[NSApplication sharedApplication] delegate];
+        iTermApplicationDelegate *appDelegate = (iTermApplicationDelegate *)[[iTermApplication_Redirection sharedApplication] delegate];
         [appDelegate userDidInteractWithASession];
         isFirstInteraction = NO;
     }
@@ -7530,7 +7530,9 @@ static double EuclideanDistance(NSPoint p1, NSPoint p2) {
 
 - (void)_useBackgroundIndicatorChanged:(NSNotification *)notification
 {
-    useBackgroundIndicator_ = [(iTermApplicationDelegate *)[[NSApplication sharedApplication] delegate] useBackgroundPatternIndicator];
+    useBackgroundIndicator_ = [(iTermApplicationDelegate *)[[iTermApplication_Redirection sharedApplication] delegate] useBackgroundPatternIndicator];
+    useBackgroundIndicator_ = true;
+    
     [self setNeedsDisplay:YES];
 }
 

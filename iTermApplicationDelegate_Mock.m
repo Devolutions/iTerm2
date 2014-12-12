@@ -92,17 +92,17 @@ static BOOL hasBecomeActive = NO;
         NSRunAlertPanel(@"Sorry", @"iTerm2 requires OS 10.5 or newer.", @"OK", nil, nil);
         [NSApp terminate: self];
     }
-
+    
     // set the TERM_PROGRAM environment variable
     putenv("TERM_PROGRAM=iTerm.app");
-
+    
     [self buildScriptMenu:nil];
-
+    
     // read preferences
     [PreferencePanel migratePreferences];
     [PreferencePanel sharedInstance];
     [ITAddressBookMgr sharedInstance];
-
+    
     [ToolbeltView populateMenu:toolbeltMenu];
     [self _updateToolbeltMenuItem];
     [self setFutureApplicationPresentationOptions:NSApplicationPresentationFullScreen unset:0];
@@ -113,22 +113,22 @@ static BOOL hasBecomeActive = NO;
     if ([NSApp respondsToSelector:@selector(presentationOptions)]) {
         // This crazy hackery is done so that we can use 10.6 and 10.7 features
         // while compiling against the 10.5 SDK.
-
+        
         // presentationOptions =  [NSApp presentationOptions]
         NSMethodSignature *presentationOptionsSignature = [object_getClass(NSApp)
-            instanceMethodSignatureForSelector:@selector(presentationOptions)];
+                                                           instanceMethodSignatureForSelector:@selector(presentationOptions)];
         NSInvocation *presentationOptionsInvocation = [NSInvocation
-            invocationWithMethodSignature:presentationOptionsSignature];
+                                                       invocationWithMethodSignature:presentationOptionsSignature];
         [presentationOptionsInvocation setTarget:NSApp];
         [presentationOptionsInvocation setSelector:@selector(presentationOptions)];
         [presentationOptionsInvocation invoke];
-
+        
         NSUInteger presentationOptions;
         [presentationOptionsInvocation getReturnValue:&presentationOptions];
-
+        
         presentationOptions |= flags;
         presentationOptions &= ~antiflags;
-
+        
         // [NSAppObj setPresentationOptions:presentationOptions];
         NSMethodSignature *setSig = [object_getClass(NSApp) instanceMethodSignatureForSelector:@selector(setPresentationOptions:)];
         NSInvocation *setInv = [NSInvocation invocationWithMethodSignature:setSig];
@@ -143,7 +143,7 @@ static BOOL hasBecomeActive = NO;
         } else if (antiflags & NSApplicationPresentationAutoHideMenuBar) {
             SetSystemUIMode(kUIModeNormal, 0);
         }
-
+        
     }
 }
 
@@ -158,14 +158,14 @@ static BOOL hasBecomeActive = NO;
     if (ranAutoLaunchScript == NO &&
         [[NSFileManager defaultManager] fileExistsAtPath:[AUTO_LAUNCH_SCRIPT stringByExpandingTildeInPath]]) {
         ranAutoLaunchScript = YES;
-
+        
         NSAppleScript *autoLaunchScript;
         NSDictionary *errorInfo = [NSDictionary dictionary];
         NSURL *aURL = [NSURL fileURLWithPath:[AUTO_LAUNCH_SCRIPT stringByExpandingTildeInPath]];
-
+        
         // Make sure our script suite registry is loaded
         [NSScriptSuiteRegistry sharedScriptSuiteRegistry];
-
+        
         autoLaunchScript = [[NSAppleScript alloc] initWithContentsOfURL:aURL
                                                                   error:&errorInfo];
         [autoLaunchScript executeAndReturnError:&errorInfo];
@@ -175,7 +175,7 @@ static BOOL hasBecomeActive = NO;
             [WindowArrangements arrangementWithName:LEGACY_DEFAULT_ARRANGEMENT_NAME] != nil) {
             [WindowArrangements makeDefaultArrangement:LEGACY_DEFAULT_ARRANGEMENT_NAME];
         }
-
+        
         if ([[PreferencePanel sharedInstance] openBookmark]) {
             // Open bookmarks window at startup.
             [self showBookmarkWindow:nil];
@@ -223,9 +223,9 @@ static BOOL hasBecomeActive = NO;
     while ([[container submenu] numberOfItems]) {
         [[container submenu] removeItemAtIndex:0];
     }
-
+    
     NSString *defaultName = [WindowArrangements defaultArrangementName];
-
+    
     for (NSString *theName in [WindowArrangements allNames]) {
         NSString *theShortcut;
         if ([theName isEqualToString:defaultName]) {
@@ -297,11 +297,11 @@ static BOOL hasBecomeActive = NO;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [iTermFontPanel makeDefault];
-
+    
     finishedLaunching_ = YES;
     // Create the app support directory
     [self _createFlag];
-
+    
     // Prevent the input manager from swallowing control-q. See explanation here:
     // http://b4winckler.wordpress.com/2009/07/19/coercing-the-cocoa-text-system/
     CFPreferencesSetAppValue(CFSTR("NSQuotedKeystrokeBinding"),
@@ -311,7 +311,7 @@ static BOOL hasBecomeActive = NO;
     CFPreferencesSetAppValue(CFSTR("NSRepeatCountBinding"),
                              CFSTR(""),
                              kCFPreferencesCurrentApplication);
-
+    
     PreferencePanel* ppanel = [PreferencePanel sharedInstance];
     // Code could be 0 (e.g., A on an American keyboard) and char is also sometimes 0 (seen in bug 2501).
     if ([ppanel hotkey] && ([ppanel hotkeyCode] || [ppanel hotkeyChar])) {
@@ -324,10 +324,10 @@ static BOOL hasBecomeActive = NO;
                                                afterDelay:0.5];
     }
     [self _updateArrangementsMenu:windowArrangements_];
-
+    
     // register for services
     [NSApp registerServicesMenuSendTypes:[NSArray arrayWithObjects:NSStringPboardType, nil]
-                                                       returnTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, NSStringPboardType, nil]];
+                             returnTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, NSStringPboardType, nil]];
     // Sometimes, open untitled doc isn't called in Lion. We need to give application:openFile:
     // a chance to run because a "special" filename cancels _performStartupActivities.
     [self checkForQuietMode];
@@ -341,7 +341,7 @@ static BOOL hasBecomeActive = NO;
 - (BOOL)applicationShouldTerminate:(NSNotification *)theNotification
 {
     NSArray *terminals;
-
+    
     terminals = [[iTermController sharedInstance] terminals];
     int numSessions = 0;
     BOOL shouldShowAlert = NO;
@@ -351,7 +351,7 @@ static BOOL hasBecomeActive = NO;
             shouldShowAlert = YES;
         }
     }
-
+    
     // Display prompt if we need to
     if (!quittingBecauseLastWindowClosed_ &&  // cmd-q
         [terminals count] > 0 &&  // there are terminal windows
@@ -374,11 +374,11 @@ static BOOL hasBecomeActive = NO;
             return NO;
         }
     }
-
+    
     // Ensure [iTermController dealloc] is called before prefs are saved
     [[iTermController sharedInstance] stopEventTap];
     [iTermController sharedInstanceRelease];
-
+    
     // save preferences
     [[PreferencePanel sharedInstance] savePreferences];
     if (![[PreferencePanel sharedInstance] customFolderChanged]) {
@@ -425,15 +425,15 @@ static BOOL hasBecomeActive = NO;
                         case NSAlertDefaultReturn:
                             doCopy = YES;
                             break;
-
+                            
                         case NSAlertAlternateReturn:
                             break;
                     }
                     if ([[alert suppressionButton] state] == NSOnState) {
-                            [[NSUserDefaults standardUserDefaults]
-                                setObject:[NSNumber numberWithBool:YES]
-                                   forKey:doCopy ? @"NoSyncNeverRemindPrefsChangesCopy" :
-                                                   @"NoSyncNeverRemindPrefsChangesLost"];
+                        [[NSUserDefaults standardUserDefaults]
+                         setObject:[NSNumber numberWithBool:YES]
+                         forKey:doCopy ? @"NoSyncNeverRemindPrefsChangesCopy" :
+                         @"NoSyncNeverRemindPrefsChangesLost"];
                     }
                     if (doCopy) {
                         [[PreferencePanel sharedInstance] pushToCustomFolder:nil];
@@ -442,7 +442,7 @@ static BOOL hasBecomeActive = NO;
             }
         }
     }
-
+    
     return YES;
 }
 
@@ -519,7 +519,7 @@ static BOOL hasBecomeActive = NO;
 }
 
 - (void)userDidInteractWithASession
-{
+{    
     userHasInteractedWithAnySession_ = YES;
 }
 
@@ -588,38 +588,38 @@ static BOOL hasBecomeActive = NO;
 - (id)init
 {
     self = [super init];
-
+    
     // Add ourselves as an observer for notifications.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadMenus:)
                                                  name:@"iTermWindowBecameKey"
                                                object:nil];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(updateAddressBookMenu:)
                                                  name: @"iTermReloadAddressBook"
                                                object: nil];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(buildSessionSubmenu:)
                                                  name: @"iTermNumberOfSessionsDidChange"
                                                object: nil];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(buildSessionSubmenu:)
                                                  name: @"iTermNameOfSessionDidChange"
                                                object: nil];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(reloadSessionMenus:)
                                                  name: @"iTermSessionBecameKey"
                                                object: nil];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(nonTerminalWindowBecameKey:)
                                                  name:@"nonTerminalWindowBecameKey"
                                                object:nil];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(windowArrangementsDidChange:)
                                                  name:@"iTermSavedArrangementChanged"
@@ -628,15 +628,15 @@ static BOOL hasBecomeActive = NO;
                                              selector:@selector(toolDidToggle:)
                                                  name:@"iTermToolToggled"
                                                object:nil];
-
+    
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
                                                        andSelector:@selector(getUrl:withReplyEvent:)
                                                      forEventClass:kInternetEventClass
                                                         andEventID:kAEGetURL];
-
+    
     aboutController = nil;
     launchTime_ = [[NSDate date] retain];
-
+    
     return self;
 }
 
@@ -653,11 +653,11 @@ static BOOL hasBecomeActive = NO;
 - (void)awakeFromNib
 {
     secureInputDesired_ = [[[NSUserDefaults standardUserDefaults] objectForKey:@"Secure Input"] boolValue];
-
+    
     NSMenu *appMenu = [NSApp mainMenu];
     NSMenuItem *viewMenuItem = [appMenu itemWithTitle:@"View"];
     NSMenu *viewMenu = [viewMenuItem submenu];
-
+    
     [viewMenu addItem: [NSMenuItem separatorItem]];
     ColorsMenuItemView *labelTrackView = [[[ColorsMenuItemView alloc]
                                            initWithFrame:NSMakeRect(0, 0, 180, 50)] autorelease];
@@ -681,7 +681,7 @@ static BOOL hasBecomeActive = NO;
 - (IBAction)toggleToolbelt:(id)sender
 {
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:![self showToolbelt]]
-                                                                       forKey:@"Show Toolbelt"];
+                                              forKey:@"Show Toolbelt"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"iTermToolbeltVisibilityChanged"
                                                         object:nil];
     [self _updateToolbeltMenuItem];
@@ -707,7 +707,7 @@ static BOOL hasBecomeActive = NO;
         [[term toolbelt] toggleToolWithName:theName];
     }
     NSMenuItem *menuItem = [toolbeltMenu itemWithTitle:theName];
-
+    
     NSInteger newState = ([menuItem state] == NSOnState) ? NSOffState : NSOnState;
     [menuItem setState:newState];
 }
@@ -731,7 +731,7 @@ static BOOL hasBecomeActive = NO;
 {
     NSString *queryString = [url query];
     NSDictionary *query = [self dictForQueryString:queryString];
-
+    
     if (![[query objectForKey:@"token"] isEqualToString:token_]) {
         NSLog(@"URL request %@ missing token", url);
         return;
@@ -784,7 +784,7 @@ static BOOL hasBecomeActive = NO;
     NSString *urlStr = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
     NSURL *url = [NSURL URLWithString: urlStr];
     NSString *urlType = [url scheme];
-
+    
     if ([urlType isEqualToString:@"iterm2"]) {
         [self launchFromUrl:url];
         return;
@@ -805,7 +805,7 @@ static BOOL hasBecomeActive = NO;
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-
+    
     [super dealloc];
 }
 
@@ -877,11 +877,11 @@ static BOOL hasBecomeActive = NO;
                                       keyEquivalent:@""];
     [superMenu addItem:newMenuItem];
     [newMenuItem release];
-
+    
     // Create the bookmark submenus for new session
     // Build the bookmark menu
     bookmarksMenu = [[[NSMenu alloc] init] autorelease];
-
+    
     [[iTermController sharedInstance] addBookmarksToMenu:bookmarksMenu
                                             withSelector:selector
                                          openAllSelector:openAllSelector
@@ -907,7 +907,7 @@ static BOOL hasBecomeActive = NO;
 - (NSMenu *)applicationDockMenu:(NSApplication *)sender
 {
     NSMenu* aMenu = [[NSMenu alloc] initWithTitle: @"Dock Menu"];
-
+    
     PseudoTerminal *frontTerminal;
     frontTerminal = [[iTermController sharedInstance] currentTerminal];
     [aMenu addItemWithTitle:@"New Window (Default Profile)"
@@ -925,7 +925,7 @@ static BOOL hasBecomeActive = NO;
                  selector:@selector(newSessionInTabAtIndex:)
           openAllSelector:@selector(newSessionsInWindow:)];
     [self _addArrangementsMenuTo:aMenu];
-
+    
     return ([aMenu autorelease]);
 }
 
@@ -1042,62 +1042,62 @@ static BOOL hasBecomeActive = NO;
 }
 
 static void SwapDebugLog() {
-        NSMutableString* temp;
-        temp = gDebugLogStr;
-        gDebugLogStr = gDebugLogStr2;
-        gDebugLogStr2 = temp;
+    NSMutableString* temp;
+    temp = gDebugLogStr;
+    gDebugLogStr = gDebugLogStr2;
+    gDebugLogStr2 = temp;
 }
 
 static void WriteDebugLogHeader() {
-  NSMutableString *windows = [NSMutableString string];
-  for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
-    [windows appendFormat:@"\nWindow %@, frame=%@. isMain=%d  isKey=%d\n%@\n",
-     window,
-     [NSValue valueWithRect:window.frame],
-     (int)[window isMainWindow],
-     (int)[window isKeyWindow],
-     [window.contentView iterm_recursiveDescription]];
-  }
-  NSString *header = [NSString stringWithFormat:
-                      @"iTerm2 version: %@\n"
-                      @"Date: %@ (%lld)\n"
-                      @"Key window: %@\n"
-                      @"Windows: %@\n"
-                      @"------ END HEADER ------\n\n",
-                      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
-                      [NSDate date],
-                      (long long)[[NSDate date] timeIntervalSince1970],
-                      [[NSApplication sharedApplication] keyWindow],
-                      windows];
-  NSData* data = [header dataUsingEncoding:NSUTF8StringEncoding];
-  int written = write(gDebugLogFile, [data bytes], [data length]);
-  assert(written == [data length]);
+    NSMutableString *windows = [NSMutableString string];
+    for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
+        [windows appendFormat:@"\nWindow %@, frame=%@. isMain=%d  isKey=%d\n%@\n",
+         window,
+         [NSValue valueWithRect:window.frame],
+         (int)[window isMainWindow],
+         (int)[window isKeyWindow],
+         [window.contentView iterm_recursiveDescription]];
+    }
+    NSString *header = [NSString stringWithFormat:
+                        @"iTerm2 version: %@\n"
+                        @"Date: %@ (%lld)\n"
+                        @"Key window: %@\n"
+                        @"Windows: %@\n"
+                        @"------ END HEADER ------\n\n",
+                        [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],
+                        [NSDate date],
+                        (long long)[[NSDate date] timeIntervalSince1970],
+                        [[NSApplication sharedApplication] keyWindow],
+                        windows];
+    NSData* data = [header dataUsingEncoding:NSUTF8StringEncoding];
+    int written = write(gDebugLogFile, [data bytes], [data length]);
+    assert(written == [data length]);
 }
 
 static void WriteDebugLogFooter() {
-  NSMutableString *windows = [NSMutableString string];
-  for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
-    [windows appendFormat:@"\nWindow %@, frame=%@. isMain=%d  isKey=%d\n%@\n",
-     window,
-     [NSValue valueWithRect:window.frame],
-     (int)[window isMainWindow],
-     (int)[window isKeyWindow],
-     [window.contentView iterm_recursiveDescription]];
-  }
-  NSString *header = [NSString stringWithFormat:
-                      @"------ BEGIN FOOTER -----\n"
-                      @"Windows: %@\n",
-                      windows];
-  NSData* data = [header dataUsingEncoding:NSUTF8StringEncoding];
-  int written = write(gDebugLogFile, [data bytes], [data length]);
-  assert(written == [data length]);
+    NSMutableString *windows = [NSMutableString string];
+    for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
+        [windows appendFormat:@"\nWindow %@, frame=%@. isMain=%d  isKey=%d\n%@\n",
+         window,
+         [NSValue valueWithRect:window.frame],
+         (int)[window isMainWindow],
+         (int)[window isKeyWindow],
+         [window.contentView iterm_recursiveDescription]];
+    }
+    NSString *header = [NSString stringWithFormat:
+                        @"------ BEGIN FOOTER -----\n"
+                        @"Windows: %@\n",
+                        windows];
+    NSData* data = [header dataUsingEncoding:NSUTF8StringEncoding];
+    int written = write(gDebugLogFile, [data bytes], [data length]);
+    assert(written == [data length]);
 }
 
 static void FlushDebugLog() {
-        NSData* data = [gDebugLogStr dataUsingEncoding:NSUTF8StringEncoding];
-        int written = write(gDebugLogFile, [data bytes], [data length]);
-        assert(written == [data length]);
-        [gDebugLogStr setString:@""];
+    NSData* data = [gDebugLogStr dataUsingEncoding:NSUTF8StringEncoding];
+    int written = write(gDebugLogFile, [data bytes], [data length]);
+    assert(written == [data length]);
+    [gDebugLogStr setString:@""];
 }
 
 - (IBAction)maximizePane:(id)sender
@@ -1116,7 +1116,7 @@ static void FlushDebugLog() {
 {
     // Set secureInputDesired_ to the opposite of the current state.
     secureInputDesired_ = [secureInput state] == NSOffState;
-
+    
     // Try to set the system's state of secure input to the desired state.
     if (secureInputDesired_) {
         if (EnableSecureEventInput() != noErr) {
@@ -1127,10 +1127,10 @@ static void FlushDebugLog() {
             NSLog(@"Failed to disable secure input.");
         }
     }
-
+    
     // Set the state of the control to the new true state.
     [secureInput setState:(secureInputDesired_ && IsSecureEventInputEnabled()) ? NSOnState : NSOffState];
-
+    
     // Save the preference, independent of whether it succeeded or not.
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:secureInputDesired_]
                                               forKey:@"Secure Input"];
@@ -1178,7 +1178,7 @@ static void FlushDebugLog() {
         SwapDebugLog();
         FlushDebugLog();
         WriteDebugLogFooter();
-
+        
         close(gDebugLogFile);
         gDebugLogFile=-1;
         NSRunAlertPanel(@"Debug Logging Stopped",
@@ -1194,7 +1194,7 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
     if (gDebugLogging) {
         struct timeval tv;
         gettimeofday(&tv, NULL);
-
+        
         [gDebugLogStr appendFormat:@"%lld.%08lld %s:%d (%s): ", (long long)tv.tv_sec, (long long)tv.tv_usec, file, line, function];
         [gDebugLogStr appendString:value];
         [gDebugLogStr appendString:@"\n"];
@@ -1215,7 +1215,7 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
     NSString *localizedTitle = NSLocalizedStringFromTableInBundle(title, @"iTerm",
                                                                   [NSBundle bundleForClass:[self class]],
                                                                   @"About");
-
+    
     NSAttributedString *string = [[NSAttributedString alloc] initWithString:localizedTitle
                                                                  attributes:linkAttributes];
     return [string autorelease];
@@ -1228,20 +1228,20 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
         [aboutController showWindow:self];
         return;
     }
-
+    
     NSDictionary *myDict = [[NSBundle bundleForClass:[self class]] infoDictionary];
     NSString *versionString = [NSString stringWithFormat: @"Build %@\n\n", [myDict objectForKey:@"CFBundleVersion"]];
-
+    
     NSAttributedString *webAString = [self _linkTo:@"http://iterm2.com/" title:@"Home Page\n"];
     NSAttributedString *bugsAString = [self _linkTo:@"http://code.google.com/p/iterm2/issues/entry" title:@"Report a bug\n\n"];
     NSAttributedString *creditsAString = [self _linkTo:@"http://code.google.com/p/iterm2/wiki/Credits" title:@"Credits"];
-
+    
     NSDictionary *linkTextViewAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-        [NSNumber numberWithInt: NSSingleUnderlineStyle], NSUnderlineStyleAttributeName,
-        [NSColor blueColor], NSForegroundColorAttributeName,
-        [NSCursor pointingHandCursor], NSCursorAttributeName,
-        NULL];
-
+                                            [NSNumber numberWithInt: NSSingleUnderlineStyle], NSUnderlineStyleAttributeName,
+                                            [NSColor blueColor], NSForegroundColorAttributeName,
+                                            [NSCursor pointingHandCursor], NSCursorAttributeName,
+                                            NULL];
+    
     [AUTHORS setLinkTextAttributes: linkTextViewAttributes];
     [[AUTHORS textStorage] deleteCharactersInRange: NSMakeRange(0, [[AUTHORS textStorage] length])];
     [[AUTHORS textStorage] appendAttributedString:[[[NSAttributedString alloc] initWithString:versionString] autorelease]];
@@ -1249,7 +1249,7 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
     [[AUTHORS textStorage] appendAttributedString: bugsAString];
     [[AUTHORS textStorage] appendAttributedString: creditsAString];
     [AUTHORS setAlignment: NSCenterTextAlignment range: NSMakeRange(0, [[AUTHORS textStorage] length])];
-
+    
     aboutController = [[NSWindowController alloc] initWithWindow:ABOUT];
     [aboutController showWindow:ABOUT];
 }
@@ -1282,7 +1282,7 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
     }
     [previousTerminal setAction: (frontTerminal ? @selector(previousTerminal:) : nil)];
     [nextTerminal setAction: (frontTerminal ? @selector(nextTerminal:) : nil)];
-
+    
     [self buildSessionSubmenu: aNotification];
     // reset the close tab/window shortcuts
     [closeTab setAction:@selector(closeCurrentTab:)];
@@ -1290,8 +1290,8 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
     [closeTab setKeyEquivalent:@"w"];
     [closeWindow setKeyEquivalent:@"W"];
     [closeWindow setKeyEquivalentModifierMask: NSCommandKeyMask];
-
-
+    
+    
     // set some menu item states
     if (frontTerminal && [[frontTerminal tabView] numberOfTabViewItems]) {
         [toggleBookmarksView setEnabled:YES];
@@ -1311,15 +1311,15 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
         case BROADCAST_OFF:
             noBroadcast = YES;
             break;
-
+            
         case BROADCAST_TO_ALL_TABS:
             sessions = YES;
             break;
-
+            
         case BROADCAST_TO_ALL_PANES:
             panes = YES;
             break;
-
+            
         case BROADCAST_CUSTOM:
             break;
     }
@@ -1339,29 +1339,29 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
 - (void)buildSessionSubmenu:(NSNotification *)aNotification
 {
     [self updateMaximizePaneMenuItem];
-
+    
     // build a submenu to select tabs
     PseudoTerminal *currentTerminal = [self currentTerminal];
-
+    
     if (currentTerminal != [aNotification object] ||
         ![[currentTerminal window] isKeyWindow]) {
         return;
     }
-
+    
     NSMenu *aMenu = [[NSMenu alloc] initWithTitle: @"SessionMenu"];
     PTYTabView *aTabView = [currentTerminal tabView];
     NSArray *tabViewItemArray = [aTabView tabViewItems];
     NSEnumerator *enumerator = [tabViewItemArray objectEnumerator];
     NSTabViewItem *aTabViewItem;
     int i=1;
-
+    
     // clear whatever menu we already have
     [selectTab setSubmenu: nil];
-
+    
     while ((aTabViewItem = [enumerator nextObject])) {
         PTYTab *aTab = [aTabViewItem identifier];
         NSMenuItem *aMenuItem;
-
+        
         if ([aTab activeSession]) {
             aMenuItem  = [[NSMenuItem alloc] initWithTitle:[[aTab activeSession] name]
                                                     action:@selector(selectSessionAtIndexAction:)
@@ -1372,9 +1372,9 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
         }
         i++;
     }
-
+    
     [selectTab setSubmenu:aMenu];
-
+    
     [aMenu release];
 }
 
@@ -1398,26 +1398,26 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
     params.alternateSelector = @selector(newSessionInWindowAtIndex:);
     params.alternateOpenAllSelector = @selector(newSessionsInWindow:);
     params.target = [iTermController sharedInstance];
-
+    
     [ProfileModel applyJournal:[aNotification userInfo]
-                         toMenu:bookmarkMenu
-                 startingAtItem:5
-                         params:&params];
+                        toMenu:bookmarkMenu
+                startingAtItem:5
+                        params:&params];
 }
 
 // This is called whenever a tab becomes key or logging starts/stops.
 - (void)reloadSessionMenus:(NSNotification *)aNotification
 {
     [self updateMaximizePaneMenuItem];
-
+    
     PseudoTerminal *currentTerminal = [self currentTerminal];
     PTYSession* aSession = [aNotification object];
-
+    
     if (currentTerminal != [[aSession tab] parentWindow] ||
         ![[currentTerminal window] isKeyWindow]) {
         return;
     }
-
+    
     if (aSession == nil || [aSession exited]) {
         [logStart setEnabled: NO];
         [logStop setEnabled: NO];
@@ -1449,8 +1449,8 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
     if ([menuItem action] == @selector(toggleUseBackgroundPatternIndicator:)) {
-      [menuItem setState:[self useBackgroundPatternIndicator]];
-      return YES;
+        [menuItem setState:[self useBackgroundPatternIndicator]];
+        return YES;
     } else if ([menuItem action] == @selector(makeDefaultTerminal:)) {
         return ![self isDefaultTerminal];
     } else if (menuItem == maximizePane) {
@@ -1482,18 +1482,18 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
 - (IBAction)buildScriptMenu:(id)sender
 {
     if ([[[[NSApp mainMenu] itemAtIndex: 5] title] isEqualToString:NSLocalizedStringFromTableInBundle(@"Script",@"iTerm", [NSBundle bundleForClass: [iTermController class]], @"Script")])
-            [[NSApp mainMenu] removeItemAtIndex:5];
-
-        // add our script menu to the menu bar
+        [[NSApp mainMenu] removeItemAtIndex:5];
+    
+    // add our script menu to the menu bar
     // get image
     NSImage *scriptIcon = [NSImage imageNamed: @"script"];
     [scriptIcon setScalesWhenResized: YES];
     [scriptIcon setSize: NSMakeSize(16, 16)];
-
+    
     // create menu item with no title and set image
     NSMenuItem *scriptMenuItem = [[[NSMenuItem alloc] initWithTitle: @"" action: nil keyEquivalent: @""] autorelease];
     [scriptMenuItem setImage: scriptIcon];
-
+    
     // create submenu
     int count = 0;
     NSMenu *scriptMenu = [[NSMenu alloc] initWithTitle: NSLocalizedStringFromTableInBundle(@"Script",@"iTerm", [NSBundle bundleForClass: [iTermController class]], @"Script")];
@@ -1501,12 +1501,12 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
     // populate the submenu with ascripts found in the script directory
     NSDirectoryEnumerator *directoryEnumerator = [[NSFileManager defaultManager] enumeratorAtPath: [SCRIPT_DIRECTORY stringByExpandingTildeInPath]];
     NSString *file;
-
+    
     while ((file = [directoryEnumerator nextObject])) {
         if ([[NSWorkspace sharedWorkspace] isFilePackageAtPath:[NSString stringWithFormat:@"%@/%@",
                                                                 [SCRIPT_DIRECTORY stringByExpandingTildeInPath],
                                                                 file]]) {
-                [directoryEnumerator skipDescendents];
+            [directoryEnumerator skipDescendents];
         }
         if ([[file pathExtension] isEqualToString: @"scpt"] ||
             [[file pathExtension] isEqualToString: @"app"] ) {
@@ -1520,20 +1520,20 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
         }
     }
     if (count > 0) {
-            [scriptMenu addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *scriptItem = [[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"Refresh",
-                                                                                                          @"iTerm",
-                                                                                                          [NSBundle bundleForClass:[iTermController class]],
-                                                                                                          @"Script")
-                                                                action:@selector(buildScriptMenu:)
-                                                         keyEquivalent:@""];
-            [scriptItem setTarget:self];
-            [scriptMenu addItem:scriptItem];
-            count++;
-            [scriptItem release];
+        [scriptMenu addItem:[NSMenuItem separatorItem]];
+        NSMenuItem *scriptItem = [[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"Refresh",
+                                                                                                      @"iTerm",
+                                                                                                      [NSBundle bundleForClass:[iTermController class]],
+                                                                                                      @"Script")
+                                                            action:@selector(buildScriptMenu:)
+                                                     keyEquivalent:@""];
+        [scriptItem setTarget:self];
+        [scriptMenu addItem:scriptItem];
+        count++;
+        [scriptItem release];
     }
     [scriptMenu release];
-
+    
     // add new menu item
     if (count) {
         [[NSApp mainMenu] insertItem:scriptMenuItem atIndex:5];
@@ -1667,7 +1667,7 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
 
 - (IBAction) showFindPanel: (id) sender
 {
-        [[iTermController sharedInstance] showHideFindBar];
+    [[iTermController sharedInstance] showHideFindBar];
 }
 
 // findNext and findPrevious are reversed here because in the search UI next
@@ -1705,7 +1705,7 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
 {
     id obj = [[NSApp mainWindow] firstResponder];
     PTYTextView *textView = 
-        (obj && [obj isKindOfClass:[PTYTextView class]]) ? obj : nil;
+    (obj && [obj isKindOfClass:[PTYTextView class]]) ? obj : nil;
     if (textView) {
         [textView scrollToSelection];
     } else {
