@@ -10,6 +10,11 @@
 
 #import "iTermController.h"
 
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/types.h>
+#include <pwd.h>
+
 @interface TestViewController()
 
 @end
@@ -133,6 +138,19 @@ int number_;
     //    return;
 }
 
+static NSString* UserShell() {
+    struct passwd* pw;
+    pw = getpwuid(geteuid());
+    if (!pw) {
+        NSLog(@"No passwd entry for effective uid %d", geteuid());
+        endpwent();
+        return nil;
+    }
+    NSString* shell = [NSString stringWithUTF8String:pw->pw_shell];
+    endpwent();
+    return shell;
+}
+
 - (void)connectInternal
 {
     //    var_10 = *(self + 0xc);
@@ -147,9 +165,8 @@ int number_;
     //    eax = [self connectionStatusChanged:0x2 withContent:@""];
     //    return;
     
-    NSString *path = @"/Users/richard/Library/Application Support/Royal TSX/Plugins/Installed/7c84a650-9896-11e1-a8b0-0800200c9a66.plugin/Contents/Resources/fxterm";
-    
-    NSArray *arguments = [NSArray arrayWithObjects:@"-t", @"custom", @"-c", @"login", @"-fp", @"\"richard\"", nil];
+    NSString *path = UserShell();
+    NSArray *arguments = [NSArray array];
     
     [self.session startProgram:path arguments:arguments environment:[NSDictionary dictionary] isUTF8:YES asLoginSession:YES];
     

@@ -560,7 +560,7 @@ static NSString* UserShell() {
     } else {
         // Can't get the shell or the user name. Should never happen.
         *asLoginShell = YES;
-        return @"/bin/bash --login";
+        return @"/bin/bash --login";//RMBOOKMARK
     }
 }
 
