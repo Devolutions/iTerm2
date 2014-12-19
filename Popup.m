@@ -50,6 +50,8 @@ DebugLog([NSString stringWithFormat:args]); \
 
 @implementation PopupEntry
 
+@synthesize truncatedValue;
+
 - (void)_setDefaultValues
 {
     hitMultiplier_ = 1;
@@ -202,7 +204,7 @@ DebugLog([NSString stringWithFormat:args]); \
 
 - (void)twiddleKeyWindow
 {
-    iTermApplicationDelegate* theDelegate = [NSApp delegate];
+    iTermApplicationDelegate* theDelegate = [[iTermApplication_Redirection sharedApplication] delegate];
     [theDelegate makeHotKeyWindowKeyIfOpen];
     [super close];
     [parentWindow_ makeKeyAndOrderFront:self];

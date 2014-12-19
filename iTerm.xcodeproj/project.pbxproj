@@ -771,8 +771,8 @@
 		797379FF1A3824F00050F042 /* xterm-terminfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DB72CF51396059200EB1005 /* xterm-terminfo.txt */; };
 		79737A001A3824F40050F042 /* PresetKeyMappings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF3CB61222FF1400AD56F1 /* PresetKeyMappings.plist */; };
 		79737A011A3824F40050F042 /* DefaultPointerActions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D8255F8146869D8007CAE78 /* DefaultPointerActions.plist */; };
-		79737A061A3826260050F042 /* TestViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79737A031A3826260050F042 /* TestViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79737A071A3826260050F042 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79737A041A3826260050F042 /* TestViewController.m */; };
+		79737A061A3826260050F042 /* iTermViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79737A031A3826260050F042 /* iTermViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79737A071A3826260050F042 /* iTermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79737A041A3826260050F042 /* iTermViewController.m */; };
 		79ABB1B61A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABB1B41A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m */; };
 		79ABB1B71A3ACCA100A8BBF2 /* iTermApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D5CC6304E7AA0500000106 /* iTermApplicationDelegate.h */; };
 		79ABB1BE1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 79ABB1BC1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h */; };
@@ -1121,8 +1121,8 @@
 		5ECE4AE914514058002A9CC2 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		7973784D1A381D8F0050F042 /* iTermEmbedded.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTermEmbedded.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		797378501A381D8F0050F042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79737A031A3826260050F042 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		79737A041A3826260050F042 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		79737A031A3826260050F042 /* iTermViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTermViewController.h; sourceTree = "<group>"; };
+		79737A041A3826260050F042 /* iTermViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTermViewController.m; sourceTree = "<group>"; };
 		79ABB1B41A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTermApplicationDelegate_Mock.m; sourceTree = "<group>"; };
 		79ABB1BC1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTermApplication_Redirection.h; sourceTree = "<group>"; };
 		79ABB1BD1A3ACFED00A8BBF2 /* iTermApplication_Redirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTermApplication_Redirection.m; sourceTree = "<group>"; };
@@ -1835,8 +1835,8 @@
 		79737A021A3826030050F042 /* Devolutions */ = {
 			isa = PBXGroup;
 			children = (
-				79737A031A3826260050F042 /* TestViewController.h */,
-				79737A041A3826260050F042 /* TestViewController.m */,
+				79737A031A3826260050F042 /* iTermViewController.h */,
+				79737A041A3826260050F042 /* iTermViewController.m */,
 				79ABB1B41A3AC9CF00A8BBF2 /* iTermApplicationDelegate_Mock.m */,
 				79ABB1BC1A3ACFED00A8BBF2 /* iTermApplication_Redirection.h */,
 				79ABB1BD1A3ACFED00A8BBF2 /* iTermApplication_Redirection.m */,
@@ -2088,7 +2088,7 @@
 				797378AD1A381E400050F042 /* charmaps.h in Headers */,
 				797378921A381E400050F042 /* Autocomplete.h in Headers */,
 				797379781A3821CC0050F042 /* NSBezierPath_AMShading.h in Headers */,
-				79737A061A3826260050F042 /* TestViewController.h in Headers */,
+				79737A061A3826260050F042 /* iTermViewController.h in Headers */,
 				797378841A381E400050F042 /* TmuxController.h in Headers */,
 				7973798C1A3821CC0050F042 /* PSMTabStyle.h in Headers */,
 				797378B91A381E410050F042 /* GTMCarbonEvent.h in Headers */,
@@ -2646,7 +2646,7 @@
 				797378ED1A381E580050F042 /* TmuxHistoryParser.m in Sources */,
 				797378E31A381E500050F042 /* ProfileModelWrapper.m in Sources */,
 				797379471A381E7E0050F042 /* PointerController.m in Sources */,
-				79737A071A3826260050F042 /* TestViewController.m in Sources */,
+				79737A071A3826260050F042 /* iTermViewController.m in Sources */,
 				7973790D1A381E630050F042 /* NSBezierPath+iTerm.m in Sources */,
 				7973795A1A381E7E0050F042 /* SplitSelectionView.m in Sources */,
 				797379481A381E7E0050F042 /* ProcessCache.m in Sources */,

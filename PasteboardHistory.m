@@ -204,6 +204,8 @@
 
 @implementation PasteboardHistoryWindowController
 
+@synthesize delegate;
+
 - (id)init
 {
     self = [super initWithWindowNibName:@"PasteboardHistory" tablePtr:nil model:[[[PopupModel alloc] init] autorelease]];
@@ -264,7 +266,7 @@
         minuteRefreshTimer_ = nil;
     }
     [self setSession:nil];
-    [self.delegate pasteboarHistoryWindowDidClose];
+    [self.delegate pasteboardHistoryWindowDidClose];
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex

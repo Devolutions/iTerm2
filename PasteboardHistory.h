@@ -70,7 +70,7 @@
 
 @protocol PasteboardHistoryWindowControllerDelegate
 
-- (void)pasteboarHistoryWindowDidClose;
+- (void)pasteboardHistoryWindowDidClose;
 
 @end
 
@@ -78,6 +78,7 @@
 {
     IBOutlet NSTableView* table_;
     NSTimer* minuteRefreshTimer_;
+    id<PasteboardHistoryWindowControllerDelegate> delegate;
 }
 
 @property(nonatomic, assign) id<PasteboardHistoryWindowControllerDelegate> delegate;

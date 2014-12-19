@@ -1,5 +1,5 @@
 //
-//  TestViewController.h
+//  iTermViewController.h
 //  iTerm
 //
 //  Created by Richard Markiewicz on 2014-12-10.
@@ -14,22 +14,26 @@
 #import "Autocomplete.h"
 #import "PasteboardHistory.h"
 
-@interface TestViewController : NSViewController<WindowControllerInterface>
+@interface iTermViewController : NSViewController<WindowControllerInterface, PasteboardHistoryWindowControllerDelegate>
 {
     PTYSession *session;
     PTYTab *tab;
-    NSViewController *parentViewController;
-    NSWindow *window;
     AutocompleteView* autocompleteView;
     PasteboardHistoryWindowController* pbHistoryView;
     int nextSessionRows_;
     int nextSessionColumns_;
 }
 
+extern NSString *const ConnectionStatus_Connected;
+extern NSString *const ConnectionStatus_Disconnected;
+
 @property (nonatomic, retain) PTYSession *session;
 @property (nonatomic, retain) PTYTab *tab;
-@property (nonatomic, retain) NSWindow *window;
+@property (nonatomic, readonly) NSWindow *window;
+@property (nonatomic, readonly) NSView *nativeView;
 
-- (id)initWithParent:(NSViewController *)controller andWindow:(NSWindow *)mainWindow;
+- (id)initWithOwner:(NSObject *)owner andSettings:(NSDictionary *)settings;
+- (void)connectWithOptions:(NSDictionary *)options;
+- (id)sendMessage:(NSString *)message;
 
 @end

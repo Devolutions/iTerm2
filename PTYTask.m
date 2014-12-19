@@ -651,7 +651,7 @@ static void reapchild(int n)
     }
     argv[max + 1] = NULL;
     char **newEnviron = [self environWithOverrides:env];
-
+    
     // Note: stringByStandardizingPath will automatically call stringByExpandingTildeInPath.
     const char *initialPwd = [[[env objectForKey:@"PWD"] stringByStandardizingPath] UTF8String];
     pid = forkpty(&fd, theTtyname, &term, &win);
@@ -675,6 +675,29 @@ static void reapchild(int n)
         // does the job.
         extern char **environ;
         environ = newEnviron;
+
+        // Running in Mono, for some reason the environment never gets picked up from the environ variable
+        // So we just iterate the variables and set them all manually
+        char** env;
+        for (env = newEnviron; *env != 0; env++)
+        {
+            // printf("%s\n", thisEnv);
+            
+            char* thisEnv = *env;
+            char** tokens;
+            tokens = str_split(thisEnv, '=');
+            
+            if(tokens)
+            {
+                // printf("%s\n", *(tokens));
+                // printf("%s\n", *(tokens + 1));
+                // printf("------------------\n");
+                
+                setenv(*(tokens), *(tokens + 1), 1);
+                free(tokens);
+            }
+        }
+        
         execvp(argpath, (char* const*)argv);
 
         /* exec error */
@@ -707,6 +730,54 @@ static void reapchild(int n)
 
     fcntl(fd,F_SETFL,O_NONBLOCK);
     [[TaskNotifier sharedInstance] registerTask:self];
+}
+
+char** str_split(char* a_str, const char a_delim)
+{
+    char** result    = 0;
+    size_t count     = 0;
+    char* tmp        = a_str;
+    char* last_comma = 0;
+    char delim[2];
+    delim[0] = a_delim;
+    delim[1] = 0;
+    
+    /* Count how many elements will be extracted. */
+    while (*tmp)
+    {
+        if (a_delim == *tmp)
+        {
+            count++;
+            last_comma = tmp;
+        }
+        tmp++;
+    }
+    
+    /* Add space for trailing token. */
+    count += last_comma < (a_str + strlen(a_str) - 1);
+    
+    /* Add space for terminating null string so caller
+     knows where the list of returned strings ends. */
+    count++;
+    
+    result = malloc(sizeof(char*) * count);
+    
+    if (result)
+    {
+        size_t idx  = 0;
+        char* token = strtok(a_str, delim);
+        
+        while (token)
+        {
+            assert(idx < count);
+            *(result + idx++) = strdup(token);
+            token = strtok(0, delim);
+        }
+        assert(idx == count - 1);
+        *(result + idx) = 0;
+    }
+    
+    return result;
 }
 
 - (BOOL)wantsRead

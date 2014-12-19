@@ -5817,7 +5817,7 @@ NSString *sessionsKey = @"sessions";
 
 #pragma mark - PasteboardHistoryWindowControllerDelegate
 
-- (void)pasteboarHistoryWindowDidClose {
+- (void)pasteboardHistoryWindowDidClose {
     [pbHistoryView shutdown];
     [pbHistoryView autorelease];
     pbHistoryView = nil;
