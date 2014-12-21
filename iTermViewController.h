@@ -14,6 +14,11 @@
 #import "Autocomplete.h"
 #import "PasteboardHistory.h"
 
+typedef enum {
+    SessionStatusConnected = 0,
+    SessionStatusDisconnected = 1
+} SessionStatus;
+
 @interface iTermViewController : NSViewController<WindowControllerInterface, PasteboardHistoryWindowControllerDelegate>
 {
     PTYSession *session;

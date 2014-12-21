@@ -25,9 +25,6 @@
 
 @implementation iTermViewController
 
-NSString *const ConnectionStatus_Connected = @"ConnectionStatusConnected";
-NSString *const ConnectionStatus_Disconnected = @"ConnectionStatusDisconnected";
-
 @synthesize session;
 @synthesize tab;
 
@@ -69,23 +66,6 @@ NSDictionary *settings_;
 - (NSWindow *)window
 {
     return [[NSApplication sharedApplication] mainWindow];
-}
-
-- (id)sendMessage:(NSString *)message
-{
-    SEL selector = NSSelectorFromString(message);
-    
-    if([self respondsToSelector:selector])
-    {
-        id result = (id)[self performSelector:selector];
-        
-        if(result)
-        {
-            return result;
-        }
-    }
-    
-    return nil;
 }
 
 - (void)connectWithOptions:(NSDictionary *)options
@@ -156,16 +136,16 @@ NSDictionary *settings_;
     PseudoTerminal *terminal = [self.tab realParentWindow];
     [controller setCurrentTerminal:terminal];
     
-    [self connectionStatusChanged:ConnectionStatus_Connected];
+    [self connectionStatusChanged:SessionStatusConnected];
 }
 
-- (void)connectionStatusChanged:(NSString *)status // and error message and error number
+- (void)connectionStatusChanged:(SessionStatus)status // and error message and error number
 {
-    SEL connectionStatusChangedSelector = NSSelectorFromString(@"connectionStatusChanged:");
+    SEL connectionStatusChangedSelector = NSSelectorFromString(@"sessionStatusChanged:");
     
     if(owner_ && [owner_ respondsToSelector:connectionStatusChangedSelector])
     {
-        [owner_ performSelector:connectionStatusChangedSelector withObject:status];
+        [owner_ performSelector:connectionStatusChangedSelector withObject:[NSNumber numberWithInt:status]];
     }
 }
 
@@ -326,7 +306,11 @@ NSDictionary *settings_;
     
     [dict setObject:[options objectForKey:KEY_COMMAND] forKey:KEY_COMMAND];
     [dict setObject:[options objectForKey:KEY_CUSTOM_COMMAND] forKey:KEY_CUSTOM_COMMAND];
-    [dict setObject:[options objectForKey:@"ARGS"] forKey:@"ARGS"];
+    
+    if(options[@"ARGS"])
+    {
+        [dict setObject:[options objectForKey:@"ARGS"] forKey:@"ARGS"];
+    }
     
     [dict setObject:[options objectForKey:KEY_TERMINAL_TYPE] forKey:KEY_TERMINAL_TYPE];
     [dict setObject:[options objectForKey:KEY_SCROLLBACK_LINES] forKey:KEY_SCROLLBACK_LINES];
@@ -581,7 +565,7 @@ NSDictionary *settings_;
 {
     [aSession terminate];
     
-    [self connectionStatusChanged:ConnectionStatus_Disconnected];
+    [self connectionStatusChanged:SessionStatusDisconnected];
 }
 
 - (IBAction)nextTab:(id)sender

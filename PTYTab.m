@@ -1190,7 +1190,8 @@ static NSString* FormatRect(NSRect r) {
     }
 
     // Remove the session.
-    [self _recursiveRemoveView:[aSession view]];
+    // Don't remove the view here. We do this from within RDM.
+    // [self _recursiveRemoveView:[aSession view]];
 
     [viewOrder_ removeObject:[NSNumber numberWithInt:[[aSession view] viewId]]];
     if (currentViewIndex_ >= [viewOrder_ count]) {
