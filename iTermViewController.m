@@ -52,8 +52,10 @@ NSDictionary *settings_;
 
 - (void)dealloc
 {
+    [autocompleteView shutdown];
+    [pbHistoryView shutdown];
+    [pbHistoryView release];
     [autocompleteView release];
-    autocompleteView = nil;
     
     [super dealloc];
 }
