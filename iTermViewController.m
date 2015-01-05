@@ -31,6 +31,7 @@
 int number_;
 id owner_;
 NSDictionary *settings_;
+NSDictionary *options_;
 
 - (id)initWithOwner:(id)owner andSettings:(NSDictionary *)settings
 {
@@ -77,6 +78,8 @@ NSDictionary *settings_;
     if(options)
     {
         prototype = [self generateBookmarkFromOptions:options];
+        
+        options_ = options;
     }
     else
     {
@@ -119,7 +122,7 @@ NSDictionary *settings_;
     {
         [cmd breakDownCommandToPath:&cmd cmdArgs:&arguments];
     }
-    
+
     pwd = [ITAddressBookMgr bookmarkWorkingDirectory:prototype forObjectType:iTermWindowObject];
     NSDictionary *env = [NSDictionary dictionaryWithObject:pwd forKey:@"PWD"];
     isUTF8 = ([[prototype objectForKey:KEY_CHARACTER_ENCODING] unsignedIntValue] == NSUTF8StringEncoding);
@@ -141,7 +144,7 @@ NSDictionary *settings_;
     [self connectionStatusChanged:SessionStatusConnected];
 }
 
-- (void)connectionStatusChanged:(SessionStatus)status // and error message and error number
+- (void)connectionStatusChanged:(SessionStatus)status
 {
     SEL connectionStatusChangedSelector = NSSelectorFromString(@"sessionStatusChanged:");
     
@@ -309,33 +312,17 @@ NSDictionary *settings_;
     [dict setObject:[options objectForKey:KEY_COMMAND] forKey:KEY_COMMAND];
     [dict setObject:[options objectForKey:KEY_CUSTOM_COMMAND] forKey:KEY_CUSTOM_COMMAND];
     
-    if(options[@"ARGS"])
+    if([options objectForKey:@"ARGS"] != nil)
     {
         [dict setObject:[options objectForKey:@"ARGS"] forKey:@"ARGS"];
     }
     
-    [dict setObject:[options objectForKey:KEY_TERMINAL_TYPE] forKey:KEY_TERMINAL_TYPE];
-    [dict setObject:[options objectForKey:KEY_SCROLLBACK_LINES] forKey:KEY_SCROLLBACK_LINES];
-    [dict setObject:[options objectForKey:KEY_UNLIMITED_SCROLLBACK] forKey:KEY_UNLIMITED_SCROLLBACK];
-    [dict setObject:[options objectForKey:KEY_CLOSE_SESSIONS_ON_END] forKey:KEY_CLOSE_SESSIONS_ON_END];
-    [dict setObject:[options objectForKey:KEY_BLINKING_CURSOR] forKey:KEY_BLINKING_CURSOR];
-//    [dict setObject:[options objectForKey:KEY_CURSOR_TYPE] forKey:KEY_CURSOR_TYPE];
+    [dict setObject:[options objectForKey:KEY_INITIAL_TEXT] forKey:KEY_INITIAL_TEXT];
+    
     [dict setObject:[options objectForKey:KEY_VERTICAL_SPACING] forKey:KEY_VERTICAL_SPACING];
     [dict setObject:[options objectForKey:KEY_HORIZONTAL_SPACING] forKey:KEY_HORIZONTAL_SPACING];
-    [dict setObject:[options objectForKey:KEY_CHARACTER_ENCODING] forKey:KEY_CHARACTER_ENCODING];
-    [dict setObject:[options objectForKey:KEY_XTERM_MOUSE_REPORTING] forKey:KEY_XTERM_MOUSE_REPORTING];
-    [dict setObject:[options objectForKey:KEY_OPTION_KEY_SENDS] forKey:KEY_OPTION_KEY_SENDS];
-    [dict setObject:[options objectForKey:KEY_RIGHT_OPTION_KEY_SENDS] forKey:KEY_RIGHT_OPTION_KEY_SENDS];
     [dict setObject:[options objectForKey:KEY_TRANSPARENCY] forKey:KEY_TRANSPARENCY];
-    [dict setObject:[options objectForKey:KEY_SILENCE_BELL] forKey:KEY_SILENCE_BELL];
-//    [dict setObject:[options objectForKey:KEY_SET_LOCALE_VARS] forKey:KEY_SET_LOCALE_VARS];
-    [dict setObject:[options objectForKey:KEY_SEND_CODE_WHEN_IDLE] forKey:KEY_SEND_CODE_WHEN_IDLE];
-    [dict setObject:[options objectForKey:KEY_IDLE_CODE] forKey:KEY_IDLE_CODE];
     [dict setObject:[options objectForKey:KEY_NAME] forKey:KEY_NAME];
-//    [dict setObject:[options objectForKey:KEY_ANTI_ALIASING] forKey:KEY_ANTI_ALIASING];
-//    [dict setObject:[options objectForKey:KEY_ASCII_ANTI_ALIASED] forKey:KEY_ASCII_ANTI_ALIASED];
-//    [dict setObject:[options objectForKey:KEY_NORMAL_FONT] forKey:KEY_NORMAL_FONT];
-//    [dict setObject:[options objectForKey:KEY_NON_ASCII_FONT] forKey:KEY_NON_ASCII_FONT];
     
     // Colours
 //    [dict setObject:[ITAddressBookMgr encodeColor:[options valueForKey:KEY_ANSI_0_COLOR]] forKey:KEY_ANSI_0_COLOR];
@@ -390,6 +377,34 @@ NSDictionary *settings_;
     [dict setObject:[options valueForKey:KEY_CURSOR_TEXT_COLOR] forKey:KEY_CURSOR_TEXT_COLOR];
 //    [dict setObject:[options valueForKey:KEY_SMART_CURSOR_COLOR] forKey:KEY_SMART_CURSOR_COLOR];
 //    [dict setObject:[options valueForKey:KEY_MINIMUM_CONTRAST] forKey:KEY_MINIMUM_CONTRAST];
+    
+    // Get display options
+    [dict setObject:[options objectForKey:KEY_NORMAL_FONT] forKey:KEY_NORMAL_FONT];
+    [dict setObject:[options objectForKey:KEY_NON_ASCII_FONT] forKey:KEY_NON_ASCII_FONT];
+    [dict setObject:[options objectForKey:KEY_BLINKING_CURSOR] forKey:KEY_BLINKING_CURSOR];
+    [dict setObject:[options objectForKey:KEY_CURSOR_TYPE] forKey:KEY_CURSOR_TYPE];
+    [dict setObject:[options objectForKey:KEY_ASCII_ANTI_ALIASED] forKey:KEY_ASCII_ANTI_ALIASED];
+    [dict setObject:[options objectForKey:KEY_NONASCII_ANTI_ALIASED] forKey:KEY_NONASCII_ANTI_ALIASED];
+    
+    // Get terminal options
+    [dict setObject:[options objectForKey:KEY_CLOSE_SESSIONS_ON_END] forKey:KEY_CLOSE_SESSIONS_ON_END];
+    [dict setObject:[options objectForKey:KEY_SILENCE_BELL] forKey:KEY_SILENCE_BELL];
+    [dict setObject:[options objectForKey:KEY_XTERM_MOUSE_REPORTING] forKey:KEY_XTERM_MOUSE_REPORTING];
+    [dict setObject:[options objectForKey:KEY_SET_LOCALE_VARS] forKey:KEY_SET_LOCALE_VARS];
+    [dict setObject:[options objectForKey:KEY_CHARACTER_ENCODING] forKey:KEY_CHARACTER_ENCODING];
+    [dict setObject:[options objectForKey:KEY_SCROLLBACK_LINES] forKey:KEY_SCROLLBACK_LINES];
+    [dict setObject:[options objectForKey:KEY_UNLIMITED_SCROLLBACK] forKey:KEY_UNLIMITED_SCROLLBACK];
+    [dict setObject:[options objectForKey:KEY_TERMINAL_TYPE] forKey:KEY_TERMINAL_TYPE];
+    
+    // Get session options
+    [dict setObject:[options objectForKey:KEY_AUTOLOG] forKey:KEY_AUTOLOG];
+    [dict setObject:[options objectForKey:KEY_LOGDIR] forKey:KEY_LOGDIR];
+    [dict setObject:[options objectForKey:KEY_SEND_CODE_WHEN_IDLE] forKey:KEY_SEND_CODE_WHEN_IDLE];
+    [dict setObject:[options objectForKey:KEY_IDLE_CODE] forKey:KEY_IDLE_CODE];
+    
+    // Get keyboard options
+    [dict setObject:[options objectForKey:KEY_OPTION_KEY_SENDS] forKey:KEY_OPTION_KEY_SENDS];
+    [dict setObject:[options objectForKey:KEY_RIGHT_OPTION_KEY_SENDS] forKey:KEY_RIGHT_OPTION_KEY_SENDS];
     
     return [NSDictionary dictionaryWithDictionary:dict];
 }

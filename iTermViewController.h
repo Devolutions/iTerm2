@@ -39,6 +39,5 @@ extern NSString *const ConnectionStatus_Disconnected;
 
 - (id)initWithOwner:(NSObject *)owner andSettings:(NSDictionary *)settings;
 - (void)connectWithOptions:(NSDictionary *)options;
-- (id)sendMessage:(NSString *)message;
 
 @end

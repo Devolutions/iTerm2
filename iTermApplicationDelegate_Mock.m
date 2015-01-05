@@ -1438,7 +1438,7 @@ int DebugLogImpl(const char *file, int line, const char *function, NSString* val
 
 - (void)updateMaximizePaneMenuItem
 {
-    [maximizePane setState:[[[[iTermController sharedInstance] currentTerminal] currentTab] hasMaximizedPane] ? NSOnState : NSOffState];
+//    [maximizePane setState:[[[[iTermController sharedInstance] currentTerminal] currentTab] hasMaximizedPane] ? NSOnState : NSOffState];
 }
 
 - (void)updateUseTransparencyMenuItem
