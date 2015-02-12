@@ -375,7 +375,7 @@ NSDictionary *options_;
     [dict setObject:[options valueForKey:KEY_SELECTED_TEXT_COLOR] forKey:KEY_SELECTED_TEXT_COLOR];
     [dict setObject:[options valueForKey:KEY_CURSOR_COLOR] forKey:KEY_CURSOR_COLOR];
     [dict setObject:[options valueForKey:KEY_CURSOR_TEXT_COLOR] forKey:KEY_CURSOR_TEXT_COLOR];
-//    [dict setObject:[options valueForKey:KEY_SMART_CURSOR_COLOR] forKey:KEY_SMART_CURSOR_COLOR];
+    [dict setObject:[options valueForKey:KEY_SMART_CURSOR_COLOR] forKey:KEY_SMART_CURSOR_COLOR];
 //    [dict setObject:[options valueForKey:KEY_MINIMUM_CONTRAST] forKey:KEY_MINIMUM_CONTRAST];
     
     // Get display options
