@@ -27,9 +27,9 @@
 
 @synthesize session;
 @synthesize tab;
+@synthesize owner;
 
 int number_;
-id owner_;
 NSDictionary *settings_;
 NSDictionary *options_;
 
@@ -42,7 +42,7 @@ NSDictionary *options_;
         autocompleteView = [[AutocompleteView alloc] init];
         
         number_ = [[iTermController sharedInstance] allocateWindowNumber];
-        owner_ = owner;
+        self.owner = owner;
         settings_ = [NSDictionary dictionaryWithDictionary:settings];
         
         return self;
@@ -57,6 +57,8 @@ NSDictionary *options_;
     [pbHistoryView shutdown];
     [pbHistoryView release];
     [autocompleteView release];
+    
+    [self.owner release];
     
     [super dealloc];
 }
@@ -148,9 +150,9 @@ NSDictionary *options_;
 {
     SEL connectionStatusChangedSelector = NSSelectorFromString(@"sessionStatusChanged:");
     
-    if(owner_ && [owner_ respondsToSelector:connectionStatusChangedSelector])
+    if(self.owner && [self.owner respondsToSelector:connectionStatusChangedSelector])
     {
-        [owner_ performSelector:connectionStatusChangedSelector withObject:[NSNumber numberWithInt:status]];
+        [self.owner performSelector:connectionStatusChangedSelector withObject:[NSNumber numberWithInt:status]];
     }
 }
 

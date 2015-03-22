@@ -27,6 +27,7 @@ typedef enum {
     PasteboardHistoryWindowController* pbHistoryView;
     int nextSessionRows_;
     int nextSessionColumns_;
+    id owner;
 }
 
 extern NSString *const ConnectionStatus_Connected;
@@ -36,6 +37,7 @@ extern NSString *const ConnectionStatus_Disconnected;
 @property (nonatomic, retain) PTYTab *tab;
 @property (nonatomic, readonly) NSWindow *window;
 @property (nonatomic, readonly) NSView *nativeView;
+@property (nonatomic, retain) id owner;
 
 - (id)initWithOwner:(NSObject *)owner andSettings:(NSDictionary *)settings;
 - (void)connectWithOptions:(NSDictionary *)options;
