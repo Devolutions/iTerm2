@@ -3109,8 +3109,10 @@ NSMutableArray* screens=0;
         return NO;
     }
 
+    
+    
     dragOk_ = YES;
-    PTYTextView* frontTextView = [[iTermController sharedInstance] frontTextView];
+    PTYTextView* frontTextView = self;//[[iTermController sharedInstance] frontTextView];
     if (!cmdPressed &&
         frontTextView &&
         [[frontTextView->dataSource session] tab] != [[dataSource session] tab]) {
@@ -3342,7 +3344,7 @@ static double EuclideanDistance(NSPoint p1, NSPoint p2) {
         [pointer_ mouseUp:event withTouches:numTouches_];
         return;
     }
-    PTYTextView* frontTextView = [[iTermController sharedInstance] frontTextView];
+    PTYTextView* frontTextView = self;//[[iTermController sharedInstance] frontTextView];
     const BOOL cmdPressed = ([event modifierFlags] & NSCommandKeyMask) != 0;
     if (!cmdPressed &&
         frontTextView &&
