@@ -675,28 +675,6 @@ static void reapchild(int n)
         // does the job.
         extern char **environ;
         environ = newEnviron;
-
-        // Running in Mono, for some reason the environment never gets picked up from the environ variable
-        // So we just iterate the variables and set them all manually
-        char** env;
-        for (env = newEnviron; *env != 0; env++)
-        {
-            // printf("%s\n", thisEnv);
-            
-            char* thisEnv = *env;
-            char** tokens;
-            tokens = str_split(thisEnv, '=');
-            
-            if(tokens)
-            {
-                // printf("%s\n", *(tokens));
-                // printf("%s\n", *(tokens + 1));
-                // printf("------------------\n");
-                
-                setenv(*(tokens), *(tokens + 1), 1);
-                free(tokens);
-            }
-        }
         
         execvp(argpath, (char* const*)argv);
 
