@@ -32,8 +32,9 @@
 int number_;
 NSDictionary *settings_;
 NSDictionary *options_;
+NSObject *broadcastingDelegate_;
 
-- (id)initWithOwner:(id)owner andSettings:(NSDictionary *)settings
+- (id)initWithOwner:(id)owner andSettings:(NSDictionary *)settings andBroadcastingDelegate:(NSObject *) delegate
 {
     self = [super init];
     
@@ -44,6 +45,7 @@ NSDictionary *options_;
         number_ = [[iTermController sharedInstance] allocateWindowNumber];
         self.owner = owner;
         settings_ = [NSDictionary dictionaryWithDictionary:settings];
+        broadcastingDelegate_ = delegate;
         
         return self;
     }
@@ -71,6 +73,14 @@ NSDictionary *options_;
 - (NSWindow *)window
 {
     return [[NSApplication sharedApplication] mainWindow];
+}
+
+- (void)sendInput:(NSData *)data
+{
+    if (self.session)
+    {
+        [self.session sendInput:data];
+    }
 }
 
 - (void)connectWithOptions:(NSDictionary *)options
@@ -107,6 +117,7 @@ NSDictionary *options_;
 
     [self addNewSession:prototype];
     [self setupSession:self.session title:@"" withSize:&initialSize];
+    self.session.broadcastingDelegate = broadcastingDelegate_;
     
     [self.session setPreferencesFromAddressBookEntry:prototype];
     

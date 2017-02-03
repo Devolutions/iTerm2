@@ -68,6 +68,8 @@
 
 @implementation PTYSession
 
+@synthesize broadcastingDelegate;
+
 static NSString *TERM_ENVNAME = @"TERM";
 static NSString *COLORFGBG_ENVNAME = @"COLORFGBG";
 static NSString *PWD_ENVNAME = @"PWD";
@@ -903,6 +905,20 @@ static NSString *kTmuxFontChanged = @"kTmuxFontChanged";
         // send to all sessions
         [[[self tab] realParentWindow] sendInputToAllSessions:data];
     }
+    
+    // Devolutions Broadcasting
+    if ([self broadcastingDelegate] && [[self broadcastingDelegate] respondsToSelector:@selector(broadcastData:)]) {
+        [[self broadcastingDelegate] performSelector:@selector(broadcastData:) withObject:data];
+    }
+}
+
+- (void)sendInput:(NSData *)data
+{
+    if ([self isTmuxClient]) {
+        [self writeTaskNoBroadcast:data];
+    } else if (![self isTmuxGateway]) {
+        [[self SHELL] writeTask:data];
+    }
 }
 
 - (void)writeTaskNoBroadcast:(NSData *)data
@@ -954,6 +970,12 @@ static NSString *kTmuxFontChanged = @"kTmuxFontChanged";
             [[tmuxController_ gateway] sendKeys:data
                                      toWindowPane:tmuxPane_];
         }
+        
+        // Devolutions Broadcasting
+        if ([self broadcastingDelegate] && [[self broadcastingDelegate] respondsToSelector:@selector(broadcastData:)]) {
+            [[self broadcastingDelegate] performSelector:@selector(broadcastData:) withObject:data];
+        }
+        
         PTYScroller* ptys = (PTYScroller*)[SCROLLVIEW verticalScroller];
         [ptys setUserScroll:NO];
         return;

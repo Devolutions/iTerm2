@@ -259,7 +259,15 @@ typedef enum {
     NSMutableArray *eventQueue_;
     PasteViewController *pasteViewController_;
     PasteContext *pasteContext_;
+    
+    // Devolutions
+    NSObject *broadcastingDelegate;
 }
+
+// Devolutions
+@property (retain) NSObject *broadcastingDelegate;
+
+- (void)sendInput:(NSData *)data;
 
 // Return the current pasteboard value as a string.
 + (NSString*)pasteboardString;
